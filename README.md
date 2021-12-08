@@ -1,2 +1,2 @@
-# Smart-Factory
+# Smart Factory
 Metaverse Realization.
