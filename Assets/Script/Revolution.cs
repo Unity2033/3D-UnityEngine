@@ -16,3 +16,6 @@ public class Revolution : MonoBehaviour
         transform.RotateAround(Star.transform.position, Vector3.down, speed);
     }
 }
+
+
+
