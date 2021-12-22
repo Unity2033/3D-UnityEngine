@@ -45,4 +45,5 @@ public class Life_Cycle : MonoBehaviour
     {
         Debug.Log("OnDestroy");
     }
+
 }

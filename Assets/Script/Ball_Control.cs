@@ -26,18 +26,17 @@ public class Ball_Control : MonoBehaviour
         //    rigid.AddForce(Vector3.up * 50, ForceMode.Impulse);
         //}
 
-        //Vector3 vec = new Vector3
-        //(
-        //      Input.GetAxisRaw("Horizontal"),
-        //      0,
-        //      Input.GetAxisRaw("Vertical")
-        // );
+        Vector3 vec = new Vector3
+        (
+              Input.GetAxisRaw("Horizontal"),
+              0,
+              Input.GetAxisRaw("Vertical")
+         );
 
-        //rigid.AddForce(vec, ForceMode.Impulse);
+        rigid.AddForce(vec, ForceMode.Impulse);
 
         // AddTouque : Vector 방향을 축으로 회전력이 생깁니다.
-        rigid.AddTorque(Vector3.down);
+        // rigid.AddTorque(Vector3.down);
     }
-
 
 }
