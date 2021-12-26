@@ -156,6 +156,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &99493445
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -177,7 +182,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99493443}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -257,7 +262,7 @@ GameObject:
   - component: {fileID: 153770584}
   - component: {fileID: 153770585}
   m_Layer: 0
-  m_Name: 'Six Hole '
+  m_Name: Six Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153770583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.065, z: 0}
+  m_LocalPosition: {x: 0.17, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 653020340}
@@ -288,7 +293,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &164244116
 GameObject:
@@ -325,6 +330,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &164244118
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -346,7 +356,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164244116}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -457,7 +467,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &229813236
 GameObject:
@@ -494,6 +504,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &229813238
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -515,7 +530,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229813236}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -626,7 +641,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &650726996
 MeshRenderer:
@@ -707,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 652988564}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 60, y: 80, z: 60}
+  m_LocalScale: {x: 60, y: 90, z: 60}
   m_Children:
   - {fileID: 234166768}
   - {fileID: 1841030528}
@@ -852,7 +867,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1043019785
 GameObject:
@@ -1019,7 +1034,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087191640}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1102,6 +1117,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!1 &1141224353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141224353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.065, z: 0}
+  m_LocalPosition: {x: 0.17, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 653020340}
@@ -1144,7 +1164,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1312781105
 GameObject:
@@ -1181,6 +1201,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &1312781107
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1202,7 +1227,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312781105}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1306,6 +1331,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &1454840596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1327,7 +1357,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454840594}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1431,6 +1461,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &1697826547
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1452,7 +1487,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697826545}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1532,7 +1567,7 @@ GameObject:
   - component: {fileID: 1841030528}
   - component: {fileID: 1841030529}
   m_Layer: 0
-  m_Name: 'Second Hole '
+  m_Name: Second Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,7 +1598,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.0075
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &2026957088
 MeshCollider:
@@ -1614,8 +1649,8 @@ Camera:
   m_GameObject: {fileID: 2030597935}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.1981132, g: 0.19530971, b: 0.19530971, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1656,7 +1691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030597935}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 7.5, z: -15}
+  m_LocalPosition: {x: 0, y: 7.5, z: -17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1697,6 +1732,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole:
   - {fileID: 234166767}
+  - {fileID: 1841030527}
+  - {fileID: 777548713}
+  - {fileID: 221238773}
+  - {fileID: 1141224353}
+  - {fileID: 153770583}
 --- !u!135 &2044303094
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1718,7 +1758,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044303092}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
