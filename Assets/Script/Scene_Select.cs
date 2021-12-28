@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class Scene_Select : MonoBehaviour
 {
-    public InputField input; 
-    
-    public void Scene_Number()
+    public void Scene_Number(int number)
     {
-       SceneManager.LoadScene(int.Parse(input.text));   
+       SceneManager.LoadScene(number);   
     }
 }
