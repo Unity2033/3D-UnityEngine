@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 56750794}
   m_Layer: 0
   m_Name: Venus
-  m_TagString: Untagged
+  m_TagString: Venus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.35
+  speed: 35
 --- !u!1 &135640880
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 522925842}
   m_Layer: 0
   m_Name: Earth
-  m_TagString: Untagged
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.29
+  speed: 29
 --- !u!1 &867849010
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 867849015}
   m_Layer: 0
   m_Name: Mercury
-  m_TagString: Untagged
+  m_TagString: Mercury
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.47
+  speed: 47
 --- !u!1 &942971267
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45337386c5cd6b429d2941a18bb374a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!114 &942971272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +688,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3045a5b2381c9924a90acb7913f76bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plante_name:
+  - Sun
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
+  - Earth
+  - Venus
+  - Mars
+  - Mercury
+  - Moon
 --- !u!1 &1048923101
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +714,7 @@ GameObject:
   - component: {fileID: 1048923106}
   m_Layer: 0
   m_Name: Saturn
-  m_TagString: Untagged
+  m_TagString: Saturn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.09
+  speed: 9
 --- !u!1 &1266048532
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +822,7 @@ GameObject:
   - component: {fileID: 1266048537}
   m_Layer: 0
   m_Name: Mars
-  m_TagString: Untagged
+  m_TagString: Mars
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -903,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.24
+  speed: 24
 --- !u!1 &1425402831
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +996,7 @@ GameObject:
   - component: {fileID: 1450667653}
   m_Layer: 0
   m_Name: Jupiter
-  m_TagString: Untagged
+  m_TagString: Jupiter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1077,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.13
+  speed: 13
 --- !u!1 &1769626537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1104,7 @@ GameObject:
   - component: {fileID: 1769626542}
   m_Layer: 0
   m_Name: Neptune
-  m_TagString: Untagged
+  m_TagString: Neptune
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1185,7 +1196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.05
+  speed: 5
 --- !u!1 &1806100972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1212,7 @@ GameObject:
   - component: {fileID: 1806100977}
   m_Layer: 0
   m_Name: Uranus
-  m_TagString: Untagged
+  m_TagString: Uranus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1293,7 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.06
+  speed: 6
 --- !u!1 &1922319791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1320,7 @@ GameObject:
   - component: {fileID: 1922319796}
   m_Layer: 0
   m_Name: Moon
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1401,7 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
-  speed: 0.01
+  speed: 1
 --- !u!1 &1959190298
 GameObject:
   m_ObjectHideFlags: 0

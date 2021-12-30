@@ -13,7 +13,7 @@ public class Revolution : MonoBehaviour
     void Update()
     {
         // RotateAround(회전 기준점, 회전 축, 속도)
-        transform.RotateAround(Star.transform.position, Vector3.down, speed);
+        transform.RotateAround(Star.transform.position, Vector3.down, speed * Time.deltaTime);
     }
 }
 

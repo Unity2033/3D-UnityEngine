@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mouse_Select : MonoBehaviour
 {
+    public string [] plante_name;
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -11,9 +13,12 @@ public class Mouse_Select : MonoBehaviour
 
         if(Physics.Raycast(ray,out hit))
         {
-            if(hit.transform.gameObject.tag == "Sun" && Input.GetMouseButtonDown(0))
+            for (int i = 0; i < plante_name.Length; i++)
             {
-                Debug.Log("Sun");
+                if (hit.transform.gameObject.tag == plante_name[i] && Input.GetMouseButtonDown(0))
+                {
+                   
+                }
             }
         }
 
