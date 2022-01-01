@@ -7,8 +7,11 @@ public class Bird_Manager : MonoBehaviour
     public Text [] Whether;
     public Sprite [] Original_Bird;
 
+    public int score;
+
     int random_value;
     int answer_value;
+
     float count = 0;
 
     private void Start()
@@ -69,12 +72,14 @@ public class Bird_Manager : MonoBehaviour
 
         if (answer_value == select)
         {
+            score += 10;
             answer_value = -1;
             Whether[select].text = "Success";
             Whether[select].color = new Color(0, 255, 0);
         }
         else
         {
+            score -= 5;
             Whether[select].text = "Failure";
             Whether[select].color = new Color(255, 0, 0);
         }

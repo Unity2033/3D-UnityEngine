@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Helix Jump.unity
-    guid: bf1de12661644784a9d1e666800c45c3
-  - enabled: 1
     path: Assets/Scenes/Life Cycle.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -17,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Roll Ball.unity
     guid: 9e67be1d847ccee40bb99bf627716d7a
+  - enabled: 1
+    path: Assets/Scenes/Rhythm Star.unity
+    guid: 60320d32750ee480b8cbc3a2083dda4a
   - enabled: 1
     path: Assets/Scenes/Airplane Simulation.unity
     guid: 4002491a0cdb6cc4e9111aebdad8c990
