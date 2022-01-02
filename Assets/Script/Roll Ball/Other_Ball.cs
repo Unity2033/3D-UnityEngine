@@ -7,8 +7,13 @@ public class Other_Ball : MonoBehaviour
     MeshRenderer mesh;
     Material material;
 
+    string[] Hole_Name = 
+        { 
+            "First Hole" , "Second Hole", "Three Hole",
+            "Four Hole", "Five Hole","Six Hole"
+        };
+
     public GameObject[] Hole;
-    bool first_hole, second_hole, three_hole, four_hole, five_hole, six_hole;
 
     void Start()
     {
@@ -49,66 +54,12 @@ public class Other_Ball : MonoBehaviour
    
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.name == "First Hole" && !first_hole)
+        for(int i = 0; i < Hole_Name.Length; i++)
         {
-            first_hole = true;
-            this.transform.position = Hole[0].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
-        }
-
-        if (other.gameObject.name == "Second Hole" && !second_hole)
-        {
-            second_hole = true;
-            this.transform.position = Hole[1].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
-        }
-
-        if (other.gameObject.name == "Three Hole" && !three_hole)
-        {
-            three_hole = true;
-            this.transform.position = Hole[2].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
-        }
-
-        if (other.gameObject.name == "Four Hole" && !four_hole)
-        {
-            four_hole = true;
-            this.transform.position = Hole[3].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
-        }
-
-        if (other.gameObject.name == "Five Hole" && !five_hole)
-        {
-            five_hole = true;
-            this.transform.position = Hole[4].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
-        }
-
-        if (other.gameObject.name == "Six Hole" && !six_hole)
-        {
-            six_hole = true;
-            this.transform.position = Hole[5].transform.position;
-        }
-        else
-        {
-            this.transform.position = this.transform.position;
+            if (other.gameObject.name == Hole_Name[i])
+            {
+                Destroy(gameObject, 3);
+            }
         }
     }
-
-
 }

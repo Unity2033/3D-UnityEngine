@@ -5,52 +5,43 @@ public class Bird_Manager : MonoBehaviour
 {
     public Image [] Bird;
     public Text [] Whether;
-    public Sprite [] Original_Bird;
+    public Sprite[] Original_Bird;
+    public Text Result_Success, Result_Failure;
 
     public int score;
+    public int Success_count, Failure_count;
 
     int random_value;
     int answer_value;
-
-    float count = 0;
 
     private void Start()
     {
         for (int i = 0; i < Bird.Length; i++)
         {
             random_value = Random.Range(0, 5);
+            Bird[i].gameObject.SetActive(false);
             Bird[i].sprite = Original_Bird[random_value];
         }
 
-        InvokeRepeating("Random_Bird_Onable", 0, 1);
-        InvokeRepeating("Random_Bird_Disable", 0, 1.5f);
+        InvokeRepeating("Random_Bird_Onable", 1, 1);
     }
 
     private void Update()
     {
-        count += Time.deltaTime;
-
-        if (count > 0.5f)
-        {
-            for (int i = 0; i < Whether.Length; i++)
-            {
-                Whether[i].gameObject.SetActive(false);
-            }
-
-            count = 0.0f;
-        }
+        Result_Success.text = "Success : " + Success_count.ToString();
+        Result_Failure.text = "Failure : " + Failure_count.ToString();
     }
 
     void Random_Bird_Onable()
     {
+        Invoke("Random_Bird_Disable", 1);
+
         for (int i = 0; i < Bird.Length; i++)
         {
-            Whether[i].gameObject.SetActive(false);
-
             if (Bird[i] == Bird[Random.Range(0, 12)])
-            {              
+            {
                 Bird[i].gameObject.SetActive(true);
-                answer_value = i;
+                answer_value = i;           
                 return;
             }
         }
@@ -61,8 +52,16 @@ public class Bird_Manager : MonoBehaviour
         answer_value = -1;
 
         for (int i = 0; i < Bird.Length; i++)
-        {
+        {        
             Bird[i].gameObject.SetActive(false);        
+        }
+    }
+
+    void Whether_Disable()
+    {
+        for (int i = 0; i < Bird.Length; i++)
+        {
+            Whether[i].gameObject.SetActive(false);                
         }
     }
 
@@ -70,16 +69,22 @@ public class Bird_Manager : MonoBehaviour
     {
         Whether[select].gameObject.SetActive(true);
 
+        Invoke("Whether_Disable", 0.25f);
+
+        if (score < 0) score = 0;
+        
         if (answer_value == select)
         {
             score += 10;
+            Success_count++;
             answer_value = -1;
             Whether[select].text = "Success";
             Whether[select].color = new Color(0, 255, 0);
         }
         else
         {
-            score -= 5;
+            score -= 10;
+            Failure_count++;
             Whether[select].text = "Failure";
             Whether[select].color = new Color(255, 0, 0);
         }
