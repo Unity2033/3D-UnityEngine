@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Level_Manager : MonoBehaviour
 {
-    public static int Level;
+    public static int Level = 1;
     public Slider Experience;
     public Text Current_Text, Next_Text;
     public Bird_Manager bird;
@@ -13,7 +13,6 @@ public class Level_Manager : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1;
-        Level = PlayerPrefs.GetInt("Current_Level", 1);
         bird = GameObject.Find("Bird Manager").GetComponent<Bird_Manager>();
 
         Current_Text.text = Level.ToString();
@@ -33,7 +32,7 @@ public class Level_Manager : MonoBehaviour
 
     public void Next_Stage()
     {
-        PlayerPrefs.SetInt("Current_Level", Level + 1);
+        Level++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
     }
 }

@@ -91,4 +91,6 @@ public class Bird_Manager : MonoBehaviour
 
         Bird[select].gameObject.SetActive(false);
     }
+
+
 }
