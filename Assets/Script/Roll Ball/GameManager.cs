@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    static GameManager instance = null;
-
     public int Score;
 
-
+    public int Max_score = 0;
+    public float current_time = 60;
 }
+

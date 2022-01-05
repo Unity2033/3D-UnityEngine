@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Other_Ball : MonoBehaviour
 {
     MeshRenderer mesh;
     Material material;
+
     GameManager manager;
 
     string[] Hole_Name = 
@@ -70,8 +70,5 @@ public class Other_Ball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         manager.Score += 100;
-        
     }
-
-
 }

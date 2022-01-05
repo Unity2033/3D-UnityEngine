@@ -13,7 +13,6 @@ public class Level_Manager : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1;
-        bird = GameObject.Find("Bird Manager").GetComponent<Bird_Manager>();
 
         Current_Text.text = Level.ToString();
         Next_Text.text = (Level + 1).ToString();

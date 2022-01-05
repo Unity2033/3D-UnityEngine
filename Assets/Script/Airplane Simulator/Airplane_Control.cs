@@ -5,13 +5,33 @@ using UnityEngine;
 public class Airplane_Control : MonoBehaviour
 {
     float speed = 10.0f;
+    public GameObject Engine;
+
+    private void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     void Update()
     {
         float Horizontal = Input.GetAxis("Horizontal");
         float Vertical = Input.GetAxis("Vertical");     
 
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            Engine.SetActive(true);
+        }
+        else if(Input.GetKeyUp(KeyCode.W))
+        {
+            Engine.SetActive(false);
+
+        }
+
         transform.Translate(new Vector3(Horizontal, 0, Vertical) * Time.deltaTime * speed);
+
+        transform.Rotate(0f, +Input.GetAxis("Mouse X") * speed * 10 *Time.deltaTime, 0f, Space.World);
+        transform.Rotate(-Input.GetAxis("Mouse Y") * speed * 10 * Time.deltaTime, 0f, 0f);
 
         // transform.position : 지정한 위치로 이동시킵니다.
 
