@@ -3622,6 +3622,11 @@ MonoBehaviour:
   Next_Text: {fileID: 1011792555}
   bird: {fileID: 1195069228}
   Result_Window: {fileID: 323862777}
+  Scenery:
+  - {fileID: 21300000, guid: 4be790a94a33ada4f8488711d5cd157b, type: 3}
+  - {fileID: 21300000, guid: 7330caaa7ee225443949a55ac4894de9, type: 3}
+  - {fileID: 21300000, guid: 63de18c8ac27c6f49afa2fc4b3385310, type: 3}
+  Buffer: {fileID: 1565344554}
 --- !u!4 &1233940379
 Transform:
   m_ObjectHideFlags: 0
@@ -4577,8 +4582,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3377ca66dda724742a2cca5ef974ec83, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

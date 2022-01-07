@@ -24,7 +24,6 @@ public class Other_Ball : MonoBehaviour
         material = mesh.material;
     }
 
-
     // Oncollision : 두 오브젝트가 물리 법칙에 영향을 받을 때 사용하는 함수입니다.
     // 두 오브젝트가 부딪혔을 때 충돌을 감지하며, 적어도 하나의 오브젝트의 Rigidbody의 Body Type이 Dynamic으로 설정되어야 합니다.
 

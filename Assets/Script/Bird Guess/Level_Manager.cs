@@ -9,6 +9,8 @@ public class Level_Manager : MonoBehaviour
     public Text Current_Text, Next_Text;
     public Bird_Manager bird;
     public GameObject Result_Window;
+    public Sprite [] Scenery;
+    public Image Buffer;
 
     private void Awake()
     {
@@ -27,6 +29,20 @@ public class Level_Manager : MonoBehaviour
             Result_Window.SetActive(true);
             Time.timeScale = 0;
         }
+
+        switch (Level)
+        {
+            case 1:
+                Buffer.sprite = Scenery[0];
+                break;
+            case 2:
+                Buffer.sprite = Scenery[1];
+                break;
+            case 3:
+                Buffer.sprite = Scenery[2];
+                break;
+        }
+
     }
 
     public void Next_Stage()

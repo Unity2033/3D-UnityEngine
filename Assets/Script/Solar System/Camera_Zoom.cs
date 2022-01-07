@@ -17,9 +17,16 @@ public class Camera_Zoom : MonoBehaviour
     {
         float Distance = Input.GetAxis("Mouse ScrollWheel") * -1 * speed;
 
-        if (Distance != 0)
+        Main_Camera.fieldOfView += Distance;
+
+        if (Main_Camera.fieldOfView >= 60)
         {
-            Main_Camera.fieldOfView += Distance;
+            Main_Camera.fieldOfView = 60;
+        }
+       
+        if(Main_Camera.fieldOfView <= 40)
+        {
+            Main_Camera.fieldOfView = 40;
         }
     }
 }
