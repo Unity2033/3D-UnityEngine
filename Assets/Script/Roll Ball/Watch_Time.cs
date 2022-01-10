@@ -8,13 +8,13 @@ public class Watch_Time : MonoBehaviour
     public GameObject Result_Window;
     public Text Best_Score, Current_Score;
 
-   GameManager manager;
+    GameManager manager;
   
     private void Start()
     {
         Time.timeScale= 1;
-        manager.Max_score = PlayerPrefs.GetInt("Max_Score", 0);
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        manager.Max_score = PlayerPrefs.GetInt("Max_Score", 0);
     }
 
     void Update()

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Other_Ball : MonoBehaviour
 {
@@ -44,7 +42,7 @@ public class Other_Ball : MonoBehaviour
     private void OnCollisionExit(Collision collision) // 두 오브젝트가 충돌이 끝날 때 호출되는 함수입니다.
     {
         if (collision.gameObject.name == "First Ball")
-        {
+        {        
             // color : 기본 클래스 색상
             material.color = new Color(1, 1, 1);
         }
@@ -61,9 +59,14 @@ public class Other_Ball : MonoBehaviour
         {
             if (other.gameObject.name == Hole_Name[i])
             {               
-                Destroy(gameObject, 1);                
+                Destroy(gameObject, 1);     
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        Sound_System.instance.Ball_Sound();
     }
 
     private void OnTriggerEnter(Collider other)

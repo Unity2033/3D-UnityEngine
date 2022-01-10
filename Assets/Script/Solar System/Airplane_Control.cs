@@ -3,23 +3,21 @@
 public class Airplane_Control : MonoBehaviour
 {
     float speed = 10.0f;
-    public GameObject Engine;
     public GameObject Headlight;
 
     private void Start()
     {
-        Engine.SetActive(true);
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+        float Vertical = Input.GetAxis("Vertical");
         float Horizontal = Input.GetAxis("Horizontal");
 
         transform.Rotate(0, 0, Horizontal * -speed *Time.deltaTime);      
-        transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
+        transform.Translate(new Vector3(0, 0, Vertical * speed * Time.deltaTime));
 
         transform.Rotate(-Input.GetAxis("Mouse Y") * Mathf.Pow(speed, 2) * Time.deltaTime, 0f, 0f);
         transform.Rotate(0f, +Input.GetAxis("Mouse X") * Mathf.Pow(speed,2) * Time.deltaTime, 0f, Space.World);

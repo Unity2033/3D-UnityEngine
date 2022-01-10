@@ -26,7 +26,7 @@ public class Level_Manager : MonoBehaviour
 
         if(bird.score >= 100)
         {           
-            Result_Window.SetActive(true);
+            Result_Window.SetActive(true);         
             Time.timeScale = 0;
         }
 
@@ -42,7 +42,6 @@ public class Level_Manager : MonoBehaviour
                 Buffer.sprite = Scenery[2];
                 break;
         }
-
     }
 
     public void Next_Stage()

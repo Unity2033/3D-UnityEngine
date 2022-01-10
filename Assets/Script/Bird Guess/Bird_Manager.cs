@@ -67,29 +67,33 @@ public class Bird_Manager : MonoBehaviour
 
     public void Click_Bird_Onable(int select)
     {
-        Whether[select].gameObject.SetActive(true);
-
-        Invoke("Whether_Disable", 0.25f);
-
-        if (score < 0) score = 0;
-        
-        if (answer_value == select)
+        if (Time.timeScale > 0)
         {
-            score += 10;
-            Success_count++;
-            answer_value = -1;
-            Whether[select].text = "Success";
-            Whether[select].color = new Color(0, 255, 0);
-        }
-        else
-        {
-            score -= 10;
-            Failure_count++;
-            Whether[select].text = "Failure";
-            Whether[select].color = new Color(255, 0, 0);
-        }
+            Sound_System.instance.Failure_Sound();
+            Whether[select].gameObject.SetActive(true);
 
-        Bird[select].gameObject.SetActive(false);
+            Invoke("Whether_Disable", 0.25f);
+
+            if (score < 0) score = 0;
+
+            if (answer_value == select)
+            {
+                score += 10;
+                Success_count++;
+                answer_value = -1;
+                Whether[select].text = "Success";
+                Whether[select].color = new Color(0, 255, 0);
+            }
+            else
+            {
+                score -= 10;
+                Failure_count++;
+                Whether[select].text = "Failure";
+                Whether[select].color = new Color(255, 0, 0);
+            }
+
+            Bird[select].gameObject.SetActive(false);
+        }
     }
 
 
