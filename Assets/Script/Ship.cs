@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Ship : MonoBehaviour
 {
-    Rigidbody rigid;
+    NavMeshAgent agent;
+
+    [SerializeField] Transform Destination;
 
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(Destination.position);
+        agent.updateRotation = false;
     }
 
     void Update()
-    {
-        rigid.MovePosition(transform.position + transform.forward * 10 * Time.deltaTime);
+    {    
+
     }
 }
