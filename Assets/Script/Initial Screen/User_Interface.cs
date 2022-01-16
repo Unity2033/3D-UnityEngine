@@ -4,7 +4,6 @@ public class User_Interface : MonoBehaviour
 {
     public GameObject[] Window;
 
-
    public void Open_Window(string name)
    {
         Sound_System.instance.Click_Sound();

@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class Level_Manager : MonoBehaviour
 {
     public static int Level = 1;
-    public Slider Experience;
-    public Text Current_Text, Next_Text;
-    public Bird_Manager bird;
-    public GameObject Result_Window;
-    public Sprite [] Scenery;
+
     public Image Buffer;
+    public Sprite[] Scenery;
+    public Bird_Manager bird;
+    public Slider Experience;
+    public GameObject Result_Window;
+    public Text Current_Text, Next_Text;
 
     private void Awake()
     {

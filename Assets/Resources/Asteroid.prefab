@@ -245,8 +245,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151664}
-  m_LocalRotation: {x: -0.11670181, y: 0.67305136, z: -0.7114525, w: -0.16497867}
-  m_LocalPosition: {x: -91.83255, y: 7.7656326, z: 38.81338}
+  m_LocalRotation: {x: 0.48576766, y: -0.48420176, z: -0.16406877, w: 0.7089851}
+  m_LocalPosition: {x: 47.72602, y: -70.30637, z: 52.718502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488002}
@@ -277,10 +277,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151664}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2761343701594600977
 MonoBehaviour:
@@ -294,9 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a86eacf48152244a82eb6b59b58843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet:
+  Planet:
   - Sun
   - Jupiter
+  - Saturn
   - Uranus
   - Neptune
   - Earth

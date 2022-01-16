@@ -16,7 +16,7 @@ public class Airplane_Control : MonoBehaviour
         float Vertical = Input.GetAxis("Vertical");
         float Horizontal = Input.GetAxis("Horizontal");
 
-        transform.Rotate(0, 0, Horizontal * -speed *Time.deltaTime);      
+        transform.Rotate(0, 0, Horizontal * -speed * 2  *Time.deltaTime);      
         transform.Translate(new Vector3(0, 0, Vertical * speed * Time.deltaTime));
 
         transform.Rotate(-Input.GetAxis("Mouse Y") * Mathf.Pow(speed, 2) * Time.deltaTime, 0f, 0f);
