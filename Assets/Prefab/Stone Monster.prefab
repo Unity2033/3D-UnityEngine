@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332923127737349738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324546740595505134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333171739229775348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 328737968087911456}
   - component: {fileID: 328737968087911460}
   - component: {fileID: 328737968087911463}
-  m_Layer: 0
-  m_Name: StoneMonster 1
+  m_Layer: 8
+  m_Name: Stone Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327073769623259620}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 12, y: 0, z: 50}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 332789176673439206}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332789176673439206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324472331558453224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324400216919085022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324365216611710662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 324537766251143028}
   - component: {fileID: 388995517849840440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

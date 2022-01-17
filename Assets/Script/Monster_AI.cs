@@ -12,6 +12,10 @@ public class Monster_AI : MonoBehaviour
         Destination = GameObject.Find("Destination").GetComponent<Transform>();
 
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(Destination.position);
     }
+
+    private void Update()
+    {
+        agent.SetDestination(Destination.position);
+    }   
 }
