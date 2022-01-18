@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a86eacf48152244a82eb6b59b58843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bomb: {fileID: 0}
   Planet:
   - Sun
   - Jupiter
@@ -305,7 +306,7 @@ MonoBehaviour:
   - Mars
   - Mercury
   - Moon
-  speed: 0.1
+  speed: 10
 --- !u!1 &176588
 GameObject:
   m_ObjectHideFlags: 0

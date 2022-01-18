@@ -7,7 +7,7 @@ public class Asteroid : MonoBehaviour
     Transform Target;
     public string [] Planet;
 
-    Vector3 dir, rotation;
+    Vector3 rotation;
 
     public float speed = 1.0f;
 
@@ -15,25 +15,23 @@ public class Asteroid : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         Target = GameObject.Find("Sun").GetComponent<Transform>();
-
-        dir = Target.transform.position - transform.position;
     }
 
     void Update()
     {
         rotation = new Vector3(100,100,100) * Time.deltaTime;
-
-        rigid.MovePosition(transform.position + dir * speed * Time.deltaTime);
         rigid.MoveRotation(transform.rotation * Quaternion.Euler(rotation));
+
+        transform.position = Vector3.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        for(int i = 0; i < Planet.Length; i++)
+        for (int i = 0; i < Planet.Length; i++)
         {
             if (other.gameObject.tag == Planet[i])
-            {
-                Destroy(gameObject);
+            {            
+                Queue_Object_Pool.instance.Insert_Queue(gameObject);
             }
         }
     }

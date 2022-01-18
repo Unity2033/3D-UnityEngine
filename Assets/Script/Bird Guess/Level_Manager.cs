@@ -42,6 +42,9 @@ public class Level_Manager : MonoBehaviour
             case 3:
                 Buffer.sprite = Scenery[2];
                 break;
+            case 4:
+                SceneManager.LoadScene(0);
+                break;
         }
     }
 
