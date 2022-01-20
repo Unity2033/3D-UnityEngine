@@ -59,17 +59,12 @@ public class Other_Ball : MonoBehaviour
         {
             if (other.gameObject.name == Hole_Name[i])
             {               
-                Destroy(gameObject, 1);     
+                Destroy(gameObject, 1);             
             }
         }
     }
 
     private void OnDestroy()
-    {
-        Sound_System.instance.Ball_Sound();
-    }
-
-    private void OnTriggerEnter(Collider other)
     {
         manager.Score += 100;
     }

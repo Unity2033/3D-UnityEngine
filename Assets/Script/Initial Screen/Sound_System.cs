@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class Sound_System : MonoBehaviour
 {
     public static Sound_System instance = null;
@@ -29,7 +28,7 @@ public class Sound_System : MonoBehaviour
         Audio_Source.PlayOneShot(sound[0]);
     }
 
-    public void Ball_Sound()
+    public void Scene_Sound()
     {
         Audio_Source.PlayOneShot(sound[1]);
     }

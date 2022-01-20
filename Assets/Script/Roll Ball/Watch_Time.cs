@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Watch_Time : MonoBehaviour
 {
@@ -37,5 +38,10 @@ public class Watch_Time : MonoBehaviour
             manager.Max_score = manager.Score;
             PlayerPrefs.SetInt("Max_Score", manager.Max_score);
         }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
