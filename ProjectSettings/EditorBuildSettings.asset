@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Initial Screen.unity
     guid: 4002491a0cdb6cc4e9111aebdad8c990
   - enabled: 1
-    path: Assets/Scenes/Life Cycle.unity
+    path: Assets/Scenes/Animation Training.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Roll Ball.unity
