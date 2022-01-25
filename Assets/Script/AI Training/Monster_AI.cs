@@ -4,7 +4,10 @@ using UnityEngine.AI;
 public class Monster_AI : MonoBehaviour
 {
     NavMeshAgent agent;
+
+    [SerializeField] GameObject Character;
     [SerializeField] Transform[] Destination;
+
     float time;
     int count;
 
@@ -26,13 +29,22 @@ public class Monster_AI : MonoBehaviour
 
     void Move_Ai()
     {
-        if (agent.velocity == Vector3.zero)
-        {
-            agent.SetDestination(Destination[count++].position);
 
-            if (count >= Destination.Length)
+        if (Vector3.Distance(transform.position, Character.transform.position) <= 7.5f)
+        {
+            transform.LookAt(Character.transform.position);
+            agent.SetDestination(Character.transform.position);
+        }
+        else
+        {
+            if (agent.velocity == Vector3.zero)
             {
-                count = 0;
+                agent.SetDestination(Destination[count++].position);
+
+                if (count >= Destination.Length)
+                {
+                    count = 0;
+                }
             }
         }
     }
