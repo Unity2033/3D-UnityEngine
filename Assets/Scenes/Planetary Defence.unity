@@ -578,49 +578,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Star: {fileID: 135640880}
   speed: 47
---- !u!1 &874666491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 874666493}
-  - component: {fileID: 874666492}
-  m_Layer: 0
-  m_Name: Asteroid Create Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &874666492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874666491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294c2e055da11254b802e257f0745f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &874666493
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874666491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942971267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515edc54e4df95145a2c50e04c20b33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+  Prefab: {fileID: 7819698874918679661, guid: 2688465fdd7f2144c9748a289846820d, type: 3}
 --- !u!4 &1411848825
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,11 +1096,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411848823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.00000013113413, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425402831
 GameObject:
@@ -1360,6 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Headlight: {fileID: 1593352327}
+  Bullet: {fileID: 7819698874918679661, guid: 2688465fdd7f2144c9748a289846820d, type: 3}
 --- !u!65 &1454148244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1398,7 +1356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593352327}
   m_LocalRotation: {x: -0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.169}
+  m_LocalPosition: {x: 0, y: -0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1454148242}
