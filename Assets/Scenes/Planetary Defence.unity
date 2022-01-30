@@ -1317,7 +1317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Headlight: {fileID: 1593352327}
-  Bullet: {fileID: 7819698874918679661, guid: 2688465fdd7f2144c9748a289846820d, type: 3}
 --- !u!65 &1454148244
 BoxCollider:
   m_ObjectHideFlags: 0

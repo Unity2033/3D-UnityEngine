@@ -4,7 +4,6 @@ public class Airplane_Control : MonoBehaviour
 {
     float speed = 10.0f;
     public GameObject Headlight;
-    public GameObject Bullet;
 
     private void Start()
     {
@@ -26,8 +25,12 @@ public class Airplane_Control : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GameObject t_object = Queue_Object_Pool.instance.Get_Queue();
-            t_object.transform.position = Headlight.transform.position;
-            t_object.GetComponent<Rigidbody>().AddForce(transform.forward * 100);     
+
+            t_object.transform.position = transform.position;
+            t_object.transform.rotation = transform.rotation;
+
+            t_object.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            t_object.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
         }
 
         if (Input.GetMouseButtonDown(1))

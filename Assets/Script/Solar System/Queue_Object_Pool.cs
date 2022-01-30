@@ -24,6 +24,9 @@ public class Queue_Object_Pool : MonoBehaviour
     public void Insert_Queue(GameObject p_object)
     {
         m_queue.Enqueue(p_object);
+        p_object.transform.position = new Vector3(0, 0, 0);
+        p_object.transform.rotation = new Quaternion(0, 0, 0,0);
+
         p_object.SetActive(false);
     }
 
