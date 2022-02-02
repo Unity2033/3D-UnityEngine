@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public string [] Planet;
+    public string[] Planet;
     Character_Control Origin;
 
     private void Start()
@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         for (int i = 0; i < Planet.Length; i++)
         {
             if (other.gameObject.tag == Planet[i])
-            {            
+            {
                 Queue_Object_Pool.instance.Insert_Queue(gameObject);              
             }
         }

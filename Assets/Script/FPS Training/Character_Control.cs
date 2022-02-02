@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Character_Control : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Character_Control : MonoBehaviour
     [Tooltip("Bullet Speed")]
     public float Bullet_speed = 25.0f;
 
+    public Image Hit;
     public GameObject Gun;
 
     float X_Rotate = 0.0f; // 내부에 사용할 X축 회전량은 별도로 정의합니다. 
@@ -19,12 +21,17 @@ public class Character_Control : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Hit.gameObject.SetActive(false);
     }
-    
+
     void Character_Move()
     {
         Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        
         transform.Translate(dir * Character_speed * Time.deltaTime);
+
+        transform.position = new Vector3(transform.position.x, 4f, transform.position.z);
     }
 
     void Character_Rotation()
@@ -51,9 +58,10 @@ public class Character_Control : MonoBehaviour
         Character_Move();
         Character_Rotation();
 
-
         if (Input.GetMouseButtonDown(0))
         {
+            Hit.gameObject.SetActive(true);
+
             GameObject t_object = Queue_Object_Pool.instance.Get_Queue();
 
             t_object.transform.position = Gun.transform.position;
@@ -62,12 +70,12 @@ public class Character_Control : MonoBehaviour
             t_object.GetComponent<Rigidbody>().velocity = Vector3.zero;
             t_object.GetComponent<Rigidbody>().AddForce(transform.forward * Bullet_speed);
         }
+                 
+        // transform.Translate : 프레임마다 일정 속도를 가지고 일정거리만큼 계속 이동하는 함수입니다. 
+        // transform.Translate의 인수로는 이동할 방향과 속력을 의미합니다.
 
-         // transform.Translate : 프레임마다 일정 속도를 가지고 일정거리만큼 계속 이동하는 함수입니다. 
-         // transform.Translate의 인수로는 이동할 방향과 속력을 의미합니다.
-
-         // 스크립트에서 회전은 쿼터니온 형식을 사용하며 벡터와는 다른 사원수 체계를 이용해 오브젝트를 회전시킵니다.
-         // 3차원 벡터를 이용해서 회전을 다루는 방법은 오일러 각 체계로 회전시킵니다.
-         // transform.rotation = Quaternion.Euler(0f, (Mathf.Cos(1) * 0.5f + 0.5f) * 360f, 0f);
+        // 스크립트에서 회전은 쿼터니온 형식을 사용하며 벡터와는 다른 사원수 체계를 이용해 오브젝트를 회전시킵니다.
+        // 3차원 벡터를 이용해서 회전을 다루는 방법은 오일러 각 체계로 회전시킵니다.
+        // transform.rotation = Quaternion.Euler(0f, (Mathf.Cos(1) * 0.5f + 0.5f) * 360f, 0f);
     }
 }
