@@ -5,6 +5,12 @@ using UnityEngine;
 public class Animation_Manager : MonoBehaviour
 {
     public Animator animator;
+    Character_Move character_move;
+
+    private void Start()
+    {
+        character_move = GetComponent<Character_Move>();
+    }
 
     void Update()
     {
@@ -13,23 +19,15 @@ public class Animation_Manager : MonoBehaviour
 
         float horizontal = Input.GetAxis("Horizontal");
 
+        // 애니메이션의 SetFloat()함수는 단발성 호출에 사용되기 때문에 Get 함수가 없습니다.
         animator.SetFloat("vertical", vertical);
         animator.SetFloat("horizontal", horizontal);
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    animator.Play("Jump", -1, 0);
-        //}
+        character_move.Move_To(new Vector3(horizontal, 0, vertical));
 
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    // 애니메이션의 SetFloat()함수는 단발성 호출에 사용되기 때문에 Get 함수가 없습니다.
-        //    animator.SetFloat("vertical", 5.0f);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.X))
-        //{
-        //    animator.SetFloat("vertical", 0.0f);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.Play("Jump", -1, 0);
+        }
     }
 }
