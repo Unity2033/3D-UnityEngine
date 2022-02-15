@@ -6,18 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Initial Screen.unity
-    guid: 4002491a0cdb6cc4e9111aebdad8c990
+    path: Assets/Scenes/2022.2.11 Class/Scene/2022.2.11.unity
+    guid: 720fcdebd53ed07408ddd62bbfd370ee
   - enabled: 1
-    path: Assets/Scenes/Roll Ball.unity
-    guid: 9e67be1d847ccee40bb99bf627716d7a
-  - enabled: 1
-    path: Assets/Scenes/FPS Training.unity
-    guid: b435b0d680cec4349b68adc01c79b115
-  - enabled: 1
-    path: Assets/Scenes/Animation Training.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Defense.unity
-    guid: 4501763f157a892498ff098b50acf604
+    path: Assets/Scenes/2022.2.11 Class/Scene/2022.2.11.T.unity
+    guid: 9587cc7b8d7a8c44596512c29dd81dc6
   m_configObjects: {}
