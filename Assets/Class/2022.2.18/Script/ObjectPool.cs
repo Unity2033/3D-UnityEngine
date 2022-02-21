@@ -6,12 +6,12 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool objpool;
 
+    // 오브젝트 풀에 담을 게임 오브젝트를 설정합니다.
     public GameObject obj;
 
+    // 게임 오브젝트를 담을 수 있는 자료구조 Queue를 생성합니다.
     public Queue<GameObject> mqueue = new Queue<GameObject>();
 
-
-    // Start is called before the first frame update
     void Start()
     {
         objpool = this;
