@@ -1,12 +1,16 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Control : MonoBehaviour
 {
     bool delay;
+    Renderer render;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        render = gameObject.GetComponent<Renderer>();
+    }
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal") * Time.deltaTime; 
@@ -14,34 +18,29 @@ public class Control : MonoBehaviour
 
         transform.Translate(x, 0, z);
 
-        int layerMask = 1 << LayerMask.NameToLayer("Monster");
-
-        var ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100, layerMask))
-        {
-            Debug.Log("냥");
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(!delay)
+            if(!delay) // 만약에 delay가 false이면 색상을 0,0,0으로 설정시키도록 변경합니다.
             {
                 delay = true;
-                Debug.Log("공격");
+                render.material.color = new Color(0, 0, 0);
+
+                // 코루틴 함수는 StartCoroutine 함수를 통해 호출할 수 있습니다.
                 StartCoroutine(AttackDelay());
             }
-            else
+            else // 그게 아니라면 색상을 0,255,0으로 설정시키도록 변경합니다.
             {
-                Debug.Log("딜레이");
+                render.material.color = new Color(0, 255, 0);
             }
         }
     }
 
+    // 코루틴 함수는 IEnumerator 함수를 사용해야 합니다.
     IEnumerator AttackDelay()
     {
+        // 2초 후에 다음 동작을 수행하도록 설정합니다.
         yield return new WaitForSeconds(2f);
         delay = false;
+        render.material.color = new Color(0, 255, 0);
     }
 }
