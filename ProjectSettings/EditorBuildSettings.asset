@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Class/2022.2.14/Scene/2022.2.14.T.unity
     guid: 42bc51a0ca37d4a40985dde47ece75d6
+  - enabled: 1
+    path: Assets/Class/2022.4.11/Scene/2022.4.11.new.unity
+    guid: ae4d532b4c367074d91cd935b9fdb455
   m_configObjects: {}
