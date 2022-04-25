@@ -88,6 +88,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
         // 유저가 현재 입장한 수를 출력합니다.
         Debug.Log($"Player Count = {PhotonNetwork.CurrentRoom.PlayerCount}");
+    
+        // 룸에 접속한 사용자 정보 확인
+        foreach(var character in PhotonNetwork.CurrentRoom.Players)
+        {
+            // 사용자의 이름과 사용자의 고유 번호를 출력합니다.
+            // $ : String.Format() 중괄호 안에 있는 내용을 문자열로 반환합니다.
+            Debug.Log($"{character.Value.NickName},{character.Value.ActorNumber}");
+        }
     }
 
 
