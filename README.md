@@ -1,67 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+Photon Server Sign Up
 
-public class Controller : MonoBehaviour
-{
-    float speed = 5.0f;
-    
-    float MouseY = 0f;
-    float MouseX = 0f;
+1. Register as a member after accessing the Photon site
 
-    float Jump = 100.0f;
-    bool count = false;
+![2022-04-19 (1)](https://user-images.githubusercontent.com/82032086/165242232-6136bd98-9692-4c2e-a19b-16174376a30f.png)
 
-    Rigidbody rigid;
+2. User Email Registration
 
-    void Start()
-    {
-        rigid = GetComponent<Rigidbody>();
+![2022-04-19 (1)](https://user-images.githubusercontent.com/82032086/165242137-44be2a9a-a2ed-4f49-bb0d-75ac72daf682.png)
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+3. Check photon mail from email
 
-    void Update()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+![2022-04-19 (1)](https://user-images.githubusercontent.com/82032086/165241958-27003ec1-2cb9-4894-8657-30cf101327f0.png)
 
-        Vector3 dir = new Vector3(x, 0, z);
+4. Set the password.
 
-        transform.Translate(dir.normalized * speed * Time.deltaTime);
-
-        MouseX += Input.GetAxis("Mouse X") * speed;
-        MouseY += Input.GetAxis("Mouse Y") * speed;
-        
-        MouseY = Mathf.Clamp(MouseY, -55, 55);
-
-        transform.localEulerAngles = new Vector3(-MouseY, MouseX, 0);
-    }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Space) && count == false)
-        {
-            rigid.AddForce(Vector3.up * Jump * Time.deltaTime, ForceMode.Impulse);
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.name == "Terrain")
-        {
-            count = false;
-        }
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.name == "Terrain")
-        {
-            count = true;
-        }
-    }
-}
-
+![2022-04-19 (1)](https://user-images.githubusercontent.com/82032086/165242409-57130967-f98d-4eae-8896-e62829d8e636.png)
 
