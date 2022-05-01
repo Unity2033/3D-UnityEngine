@@ -21,8 +21,6 @@ public class PhotonControl : MonoBehaviourPun
         {
             cam.enabled = false;
         }
-
-        Cursor.visible = false;
     }
 
     void Update()
@@ -34,7 +32,7 @@ public class PhotonControl : MonoBehaviourPun
 
             Vector3 dir = new Vector3(x, 0, v);
 
-            transform.Translate(dir * speed * Time.deltaTime);
+            transform.Translate(dir.normalized * speed * Time.deltaTime);
 
             float mouse_x = Input.GetAxis("Mouse X");
 

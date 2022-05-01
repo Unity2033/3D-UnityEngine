@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Class/Photon Portfolio/Scene/Photon Portfolio.unity
     guid: b992798bf0a530c4fab5050dbe86e4d4
+  - enabled: 1
+    path: Assets/Class/Photon Portfolio/Scene/Lobby.unity
+    guid: e19145b2a9a5c6d47a5b5cdec07b78f0
+  - enabled: 1
+    path: Assets/Class/Photon Portfolio/Scene/Photon Game.unity
+    guid: 10e4ec02744cad44584b9ce1132b41c9
   m_configObjects: {}
