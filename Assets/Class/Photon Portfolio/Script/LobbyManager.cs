@@ -61,8 +61,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
 
     public void OnClickJoinRoom()
-    {
-        PhotonNetwork.JoinRoom(RoomName.text);
+    {    
+         PhotonNetwork.JoinRoom(RoomName.text);
     }
 
     // 룸 생성이 완료된 후 호출되는 콜백 함수

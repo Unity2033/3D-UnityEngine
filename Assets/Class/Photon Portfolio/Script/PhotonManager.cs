@@ -53,9 +53,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // 로비에 접속 후 호출되는 콜백 함수
     public override void OnJoinedLobby()
     {
-        // 로비 씬으로 이동
         // PhotonNetwork.LoadLevel 사용하는 이유는 씬 동기화를 맞추기 위해 사용해야 합니다.
-        // 일반 LoadLevel은 씬 동기화가 되지 않습니다.
-        PhotonNetwork.LoadLevel("Lobby");
+        // 일반 LoadLevel은 씬 동기화가 되지 않습니다.\
+
+         PhotonNetwork.LoadLevel("Lobby");
+  
+
     }
 }
