@@ -16,10 +16,10 @@ MonoBehaviour:
     AppIdRealtime: 4b1376d8-c5f7-4f48-88bd-fea0bf5996a6
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 1553c6b1-cbc0-46a1-94da-aabda1f043c5
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: KR
+    FixedRegion: kr
     Server: 
     Port: 0
     ProxyServer: 
@@ -39,6 +39,9 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

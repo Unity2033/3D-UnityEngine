@@ -16,10 +16,12 @@ public class PhotonControl : MonoBehaviourPun
         if(photonView.IsMine)
         {
             Camera.main.gameObject.SetActive(false);
+            AudioListener.volume = 1;
         }
         else
         {
             cam.enabled = false;
+            GetComponentInChildren<AudioListener>().enabled = false;
         }
     }
 

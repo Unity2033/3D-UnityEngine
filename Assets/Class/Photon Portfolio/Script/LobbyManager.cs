@@ -87,8 +87,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         CreateRoomObject();
     }
 
+
+
     void UpdateRoom(List<RoomInfo> roomList)
-    {
+    {     
         for (int i = 0; i < roomList.Count; i++)
         {
             // 해당 이름이 RoomCatalog의 key 값으로 설정되어 있다면
