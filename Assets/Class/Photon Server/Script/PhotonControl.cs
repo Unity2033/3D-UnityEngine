@@ -40,6 +40,6 @@ public class PhotonControl : MonoBehaviourPun
 
             angle += mouse_x * 100 * Time.deltaTime;
 
-            transform.eulerAngles = new Vector3(0, angle, 0);      
+            transform.eulerAngles = new Vector3(0, angle, 0);         
     }
 }
