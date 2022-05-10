@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Region : MonoBehaviour
+public class LobbyCount : MonoBehaviour
 {
     public int count;
 

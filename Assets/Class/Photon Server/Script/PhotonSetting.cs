@@ -3,14 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class PhotonSetting : MonoBehaviourPunCallbacks
 {
-    public InputField id;
+    public InputField email;
+    public InputField password;
+    public InputField username;
     public InputField region;
-    public Button connect;
+   
+    public void SignUp()
+    {
+        // RegisterPlayFabUserRequest : 서버에 유저를 등록하기 위한 클래스 
+        var request = new RegisterPlayFabUserRequest
+        {
+            Email = email.text,       // 입력한 Email
+            Password = password.text, // 입력한 비밀번호
+            Username = username.text  // 입력한 유저 이름
+        };
 
-    public void Connect()
+        PlayFabClientAPI.RegisterPlayFabUser
+        (
+            request,       // 회원 가입에 대한 정보
+            SignUpSuccess, // 회원 가입이 성공했을 때 함수
+            SignUpFailure  // 회원 가입이 실패했을 때 함수
+        );
+    }
+
+    public void Login()
+    {
+        var request = new LoginWithEmailAddressRequest
+        {
+            Email = email.text,
+            Password = password.text,
+        };
+
+        PlayFabClientAPI.LoginWithEmailAddress
+            (
+              request,
+              LoginSuccess,
+              LoginFailure
+            );
+     }
+
+    public void LoginSuccess(LoginResult result)
     {
         PhotonNetwork.AutomaticallySyncScene = false;
 
@@ -19,25 +56,27 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = "1.0f";
 
         // 유저 아이디 설정
-        PhotonNetwork.NickName = id.text;
+        PhotonNetwork.NickName = username.text;
 
+        // 입력한 지역을 설정합니다.
         PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = region.text;
-        
+       
         // 서버 접속
         PhotonNetwork.LoadLevel("Photon Lobby"); 
     }
 
-    void Update()
+    public void LoginFailure(PlayFabError error)
     {
-        if (id.text.Length != 0 && region.text.Length != 0)
-        {
-            connect.interactable = true;
-        }
-        else
-        {
-            connect.interactable = false;
-        }
-    
-        Debug.Log(PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion);
+        Debug.Log("로그인 실패");
+    }
+
+    public void SignUpSuccess(RegisterPlayFabUserResult result)
+    {
+        Debug.Log("회원 가입 성공");
+    }
+
+    public void SignUpFailure(PlayFabError error)
+    {
+        Debug.Log("회원 가입 실패");
     }
 }

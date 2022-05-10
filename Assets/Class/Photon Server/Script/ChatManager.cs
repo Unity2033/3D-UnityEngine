@@ -34,6 +34,9 @@ public class ChatManager : MonoBehaviourPunCallbacks
         // 스크롤 뷰 - content에 자식으로 등록합니다.
         chat.transform.SetParent(ChatContent);
 
+        // 채팅을 입력한 후에도 이어서 입력할 수 있도록 설정합니다.
+        input.ActivateInputField();
+
         // input 텍스트를 초기화합니다.
         input.text = "";
     }
