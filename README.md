@@ -7,4 +7,4 @@ Photon Server Sign Up
 
 시네머신 예제 파일
 
-[File.zip](https://github.com/Unity2033/Smart-Factory/files/8704110/File.zip)
+[Uploading UnityCharacter.zip…]()
