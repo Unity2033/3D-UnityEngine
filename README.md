@@ -6,4 +6,5 @@ Photon Server Sign Up
 1553c6b1-cbc0-46a1-94da-aabda1f043c5
 
 시네머신 예제 파일
-[UnityCharacter.zip](https://github.com/Unity2033/Smart-Factory/files/8704098/UnityCharacter.zip)
+
+[File.zip](https://github.com/Unity2033/Smart-Factory/files/8704110/File.zip)
