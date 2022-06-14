@@ -60,6 +60,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         // 룸을 생성하는 함수
         PhotonNetwork.CreateRoom(RoomName.text, Room);
+
     }
 
     public void OnClickJoinRoom()
@@ -88,8 +89,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         UpdateRoom(roomList);
         CreateRoomObject();
     }
-
-
 
     void UpdateRoom(List<RoomInfo> roomList)
     {     

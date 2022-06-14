@@ -21,6 +21,5 @@ public class LobbyCount : MonoBehaviour
                 Data.count = 2;
                 break;
         }
-
     }
 }

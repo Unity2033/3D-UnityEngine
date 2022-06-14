@@ -41,7 +41,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         // 로비에 입장하는 함수
         //PhotonNetwork.JoinLobby();
-
+  
         switch (Data.count)
         {
             case 0:
