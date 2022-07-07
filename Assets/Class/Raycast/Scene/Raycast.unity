@@ -217,6 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b456bbae97890764483736b3d794c097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &207932030
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +714,7 @@ GameObject:
   - component: {fileID: 1258329094}
   - component: {fileID: 1258329093}
   - component: {fileID: 1258329092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
