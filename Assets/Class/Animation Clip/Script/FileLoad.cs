@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 public class FileLoad : MonoBehaviour
 {
-    public Text textUI;
+    public Text [] textGUI;
 
-    string path = "Assets/Class/Animation Clip/File/Explanation.txt";
+    public string [] path;
 
     void Start()
     {
-        textUI.text = System.IO.File.ReadAllText(path);
+        for(int i = 0; i < textGUI.Length; i++)
+        {
+            textGUI[i].text = System.IO.File.ReadAllText(path[i]);
+        }
     }
-
 }
+
+

@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 86852332}
   - component: {fileID: 86852331}
   m_Layer: 5
-  m_Name: Region
+  m_Name: Region Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 330324755}
   - component: {fileID: 330324754}
   m_Layer: 5
-  m_Name: Join Room
+  m_Name: Join Room Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,11 +591,11 @@ RectTransform:
   m_Children:
   - {fileID: 946737420}
   - {fileID: 1233352212}
-  - {fileID: 1479532772}
   - {fileID: 806591174}
   - {fileID: 1617818269}
+  - {fileID: 1479532772}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 607407092}
   - component: {fileID: 607407091}
   m_Layer: 5
-  m_Name: Lobby
+  m_Name: Lobby Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +909,7 @@ RectTransform:
   m_Children:
   - {fileID: 86852330}
   m_Father: {fileID: 347031205}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1043,7 +1043,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &946737419
 GameObject:
@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 1196080381}
   - component: {fileID: 1196080380}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1344,7 +1344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197818202
 GameObject:
@@ -1903,7 +1903,7 @@ RectTransform:
   - {fileID: 608082007}
   - {fileID: 1239600215}
   m_Father: {fileID: 347031205}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2123,7 +2123,7 @@ RectTransform:
   m_Children:
   - {fileID: 607407090}
   m_Father: {fileID: 347031205}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -2309,7 +2309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1837996177
 GameObject:
@@ -2473,7 +2473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2060943882}
   - component: {fileID: 2060943881}
-  - component: {fileID: 2060943883}
   m_Layer: 0
   m_Name: Photon Manager
   m_TagString: Untagged
@@ -2508,18 +2507,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2060943883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060943880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0c70cbdb7f94a4783ebb32d476c537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0

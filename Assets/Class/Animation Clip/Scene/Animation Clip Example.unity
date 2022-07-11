@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 151627414}
   - component: {fileID: 151627413}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Open Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Open
+  m_Text: 
 --- !u!222 &151627414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -791,7 +791,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8eca12c0635d74cbd04a1e3e61c477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUI: {fileID: 401981806}
+  textGUI:
+  - {fileID: 401981806}
+  - {fileID: 151627413}
+  - {fileID: 2000068211}
+  path:
+  - Assets/Class/Animation Clip/File/Explanation.txt
+  - Assets/Class/Animation Clip/File/Open.txt
+  - Assets/Class/Animation Clip/File/Close.txt
 --- !u!4 &1823635101
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,7 +1026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: 
 --- !u!222 &2000068212
 CanvasRenderer:
   m_ObjectHideFlags: 0
