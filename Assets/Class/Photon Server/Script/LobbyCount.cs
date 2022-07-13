@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -9,16 +9,13 @@ public class LobbyCount : MonoBehaviour
 
     public void Selected()
     {
-        switch (count)
+        switch (Data.count)
         {
-            case 0:
-                Data.count = 0;
+            case 0 : Data.count = 0;
                 break;
-            case 1:
-                Data.count = 1;
+            case 1 : Data.count = 1;
                 break;
-            case 2:
-                Data.count = 2;
+            case 2 : Data.count = 2;
                 break;
         }
     }
