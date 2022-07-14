@@ -1,4 +1,3 @@
-﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,39 +8,23 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public InputField RoomName, RoomPerson;
     public Button RoomCreate, RoomJoin;
-    public Text NickName;
 
     public GameObject RoomPrefab;
     public Transform RoomContent;
 
     Dictionary<string, RoomInfo> RoomCatalog = new Dictionary<string, RoomInfo>();
 
-    private void Start()
-    {
-        NickName.text = PhotonNetwork.NickName;
-    }
-
     void Update()
     {
         if(RoomName.text.Length > 0)
-        {
             RoomJoin.interactable = true;
-        }
         else
-        {
             RoomJoin.interactable = false;
-        }
 
         if(RoomName.text.Length > 0 && RoomPerson.text.Length > 0)
-        {
             RoomCreate.interactable = true;
-        }
         else
-        {
             RoomCreate.interactable = false;
-        }
-
-        Debug.Log(PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion);
     }
 
     public void OnClickCreateRoom()
@@ -60,7 +43,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         // 룸을 생성하는 함수
         PhotonNetwork.CreateRoom(RoomName.text, Room);
-
     }
 
     public void OnClickJoinRoom()
@@ -110,7 +92,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RoomCatalog[roomList[i].Name] = roomList[i];
         }
     }
-
 
     public void AllDeleteRoom()
     {
