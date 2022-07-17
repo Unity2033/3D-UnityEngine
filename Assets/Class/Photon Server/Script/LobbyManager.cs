@@ -103,6 +103,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
+    // 룸에 입장한 후 호출되는 콜백 함수
+    public override void OnJoinedRoom()
+    {
+        PhotonNetwork.LoadLevel("Photon Game");
+    }
+
     public void CreateRoomObject()
     {
         // RoomCatalog에 여러 개의 Value값이 들어가있다면 RoomInfo에 넣어줍니다.
@@ -117,11 +123,5 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             // 룸 정보를 입력합니다.
             room.GetComponent<Infomation>().SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);
         }  
-    }
-
-    // 룸에 입장한 후 호출되는 콜백 함수
-    public override void OnJoinedRoom()
-    {
-        PhotonNetwork.LoadLevel("Photon Game");
     }
 }

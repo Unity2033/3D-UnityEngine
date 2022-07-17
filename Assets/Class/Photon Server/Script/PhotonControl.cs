@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -6,7 +6,7 @@ using Photon.Pun;
 public class PhotonControl : MonoBehaviourPun
 {
     public float speed = 5.0f;
-    float angle;
+    public float angleSpeed;
 
     public Camera cam;
 
@@ -36,10 +36,8 @@ public class PhotonControl : MonoBehaviourPun
 
             transform.Translate(dir.normalized * speed * Time.deltaTime);
 
-            float mouse_x = Input.GetAxis("Mouse X");
+            float mouseX = Input.GetAxis("Mouse X");
 
-            angle += mouse_x * 100 * Time.deltaTime;
-
-            transform.eulerAngles = new Vector3(0, angle, 0);         
+            transform.eulerAngles = new Vector3(0, mouseX * angleSpeed * Time.deltaTime, 0);         
     }
 }

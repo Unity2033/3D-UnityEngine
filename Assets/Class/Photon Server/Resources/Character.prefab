@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  angleSpeed: 100
   cam: {fileID: 6762563523306535183}
 --- !u!114 &3348196187192497974
 MonoBehaviour:
