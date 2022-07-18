@@ -16,7 +16,6 @@ public class PhotonControl : MonoBehaviourPun
         if(photonView.IsMine)
         {
             Camera.main.gameObject.SetActive(false);
-            AudioListener.volume = 1;
         }
         else
         {
@@ -29,15 +28,17 @@ public class PhotonControl : MonoBehaviourPun
     {
         if (!photonView.IsMine) return;
         
-            float x = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-            Vector3 dir = new Vector3(x, 0, v);
+        transform.Translate(dir.normalized * speed * Time.deltaTime);
 
-            transform.Translate(dir.normalized * speed * Time.deltaTime);
-
-            float mouseX = Input.GetAxis("Mouse X");
-
-            transform.eulerAngles = new Vector3(0, mouseX * angleSpeed * Time.deltaTime, 0);         
+        transform.eulerAngles = new Vector3
+            (
+               0, 
+               Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime,
+               0
+            );         
     }
 }
+
+

@@ -8,7 +8,7 @@ public class CharacterControll : MonoBehaviour
     public float speed;
 
     Rigidbody rigid;
-    Vector3 dir;
+    Vector3 direction;
 
     void Start()
     {
@@ -17,12 +17,12 @@ public class CharacterControll : MonoBehaviour
 
     private void Update()
     {
-        dir.x = Input.GetAxis("Horizontal");
-        dir.z = Input.GetAxis("Vertical");
+        direction.x = Input.GetAxis("Horizontal");
+        direction.z = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Space) && condition == true)
         {
-            // AddForce : °´Ã¼¿¡ ÀÏÁ¤ÇÑ ÈûÀ» °¡ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+            // AddForce : ê°ì²´ì— ì¼ì •í•œ í˜ì„ ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
             rigid.AddForce(new Vector3(0, 200, 0));
             condition = false;
         }
@@ -34,47 +34,28 @@ public class CharacterControll : MonoBehaviour
         rigid.MovePosition
             (
               rigid.position +
-              dir *
+              direction *
               speed *
               Time.deltaTime
             );
     }
 
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ÇßÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // ë¬¼ë¦¬ì ì¸ ì¶©ëŒì„ í–ˆì„ ë•Œ ë™ì‘í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     private void OnCollisionEnter(Collision collision)
     {
         condition = true;
     }
 
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ÇÏ°í ÀÖÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // ë¬¼ë¦¬ì ì¸ ì¶©ëŒì„ í•˜ê³  ìˆì„ ë•Œ ë™ì‘í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("Stay");
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ¹ş¾î³µÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // ë¬¼ë¦¬ì ì¸ ì¶©ëŒì„ ë²—ì–´ë‚¬ì„ ë•Œ ë™ì‘í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     private void OnCollisionExit(Collision collision)
     {
         condition = false;
-    }
-
-    // OnTrigger : ¹°¸®ÀûÀÎ Ãæµ¹À» ÇÏÁö ¾Ê°í Ãæµ¹ Ã³¸®¸¦ ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ÇÏÁö ¾Ê°í Ãæµ¹À» ÇßÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-    private void OnTriggerEnter(Collider other)
-    {
-        gameObject.SetActive(false);
-    }
-
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ÇÏÁö ¾Ê°í Ãæµ¹À» ÇÏ°í ÀÖÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("Trigger Stay");
-    }
-
-    // ¹°¸®ÀûÀÎ Ãæµ¹À» ÇÏÁö ¾Ê°í Ãæµ¹À» ¹ş¾î³µÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Trigger Exit");
+        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
 }
