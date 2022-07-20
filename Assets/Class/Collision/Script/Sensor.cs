@@ -19,12 +19,13 @@ public class Sensor : MonoBehaviour
     // 물리적인 충돌을 하지 않고 충돌을 하고 있을 때 동작하는 함수입니다.
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Trigger Stay");
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     // 물리적인 충돌을 하지 않고 충돌을 벗어났을 때 동작하는 함수입니다.
     private void OnTriggerExit(Collider other)
     {
         video.Stop();
+        transform.localScale = new Vector3(1f, 1f, 1f);
     }
 }

@@ -32,13 +32,12 @@ public class PhotonControl : MonoBehaviourPun
 
         transform.Translate(dir.normalized * speed * Time.deltaTime);
 
-        transform.eulerAngles = new Vector3
-            (
-               0, 
-               Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime,
-               0
-            );         
+        transform.eulerAngles += new Vector3
+        (
+           0, Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime, 0
+        );         
     }
+
 }
 
 
