@@ -761,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f75af1b3e947c148b3845b77db8c14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2068844165}
   window: {fileID: 2068844163}
 --- !u!1 &1823635099
 GameObject:
@@ -956,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f75af1b3e947c148b3845b77db8c14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2068844165}
   window: {fileID: 2068844163}
 --- !u!1 &2000068209
 GameObject:
