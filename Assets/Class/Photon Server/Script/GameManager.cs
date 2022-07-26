@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviourPunCallbacks
                  Random.Range(0, 5)), 
                  Quaternion.identity
             );
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.LoadLevel("Photon Lobby");
     }
 }
 
