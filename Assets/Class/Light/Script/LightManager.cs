@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
@@ -9,13 +9,8 @@ public class LightManager : MonoBehaviour
     {   
         condition = !condition;
 
-        if (condition)
-        {
-            lightEffect[number].SetActive(true);
-        }
-        else
-        {
-            lightEffect[number].SetActive(false);
-        }
+        lightEffect[number].SetActive(condition);
     }
 }
+
+
