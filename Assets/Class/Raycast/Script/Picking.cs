@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Picking : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class Picking : MonoBehaviour
                   hit.collider.gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Ice");                        
             }
         }
+        
     }
 }
 

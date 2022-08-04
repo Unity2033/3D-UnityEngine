@@ -16,13 +16,9 @@ public class Patrol : MonoBehaviour
         );
 
         if(transform.position.x >= 3f)
-        {
-            distance = -3;
-        }
+            distance = -3;     
         else if(transform.position.x <= -3f)
-        {
-            distance = 3;
-        }
+            distance = 3;     
     }
 
 }

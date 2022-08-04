@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
+    public static DataManager instance;
+
     public int money;
 
     private void Awake()
     {
+        instance = this;
         LoadDate();
     }
 
@@ -21,17 +24,10 @@ public class DataManager : MonoBehaviour
         money = PlayerPrefs.GetInt("money");
     }
 
-    // money라는 변수에 1000을 저장하는 함수입니다.
-    public void Saving()
+    // money라는 변수에 100을 저장하는 함수입니다.
+    public void Save()
     {
-        money += 1000;
-        SaveData();
-    }
-
-    // money라는 변수에 1000을 감소하는 함수입니다. 
-    public void Withdrawal()
-    {
-        money -= 1000;
+        money += 100;
         SaveData();
     }
 }
