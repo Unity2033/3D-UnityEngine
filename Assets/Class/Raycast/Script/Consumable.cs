@@ -13,3 +13,5 @@ public class Consumable : MonoBehaviour
         outline.sprite = item.outline;
     }
 }
+
+

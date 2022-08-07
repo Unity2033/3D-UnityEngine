@@ -15,4 +15,4 @@ MonoBehaviour:
   price: 0
   name: 
   picture: {fileID: 21300000, guid: c7eb6a5e51845e944a7058e0e5df3d0c, type: 3}
-  outline: {fileID: 21300000, guid: 5659b073e19871d4da7394b6456da365, type: 3}
+  outline: {fileID: 21300000, guid: 76a827c0b7b700d4fa9e135b970a64b1, type: 3}
