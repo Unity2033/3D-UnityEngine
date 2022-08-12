@@ -14,12 +14,12 @@ public class AnimationSpeed : MonoBehaviour
             data.speed = 1;
         }
 
+        data.Save();
         speedText.text = data.speed.ToString();
 
         for(int i = 0; i < animator.Length; i++)
         {
             animator[i].speed = data.speed / 10;
         }
-    }
-   
+    } 
 }
