@@ -1,5 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
@@ -8,11 +6,12 @@ using PlayFab.ClientModels;
 
 public class PhotonSetting : MonoBehaviourPunCallbacks
 {
-    public InputField email;
-    public InputField password;
-    public InputField username;
-    public InputField region;
-   
+    [SerializeField] Dropdown region;
+
+    [SerializeField] InputField email;
+    [SerializeField] InputField password;
+    [SerializeField] InputField username;
+ 
     public void SignUp()
     {
         // RegisterPlayFabUserRequest : 서버에 유저를 등록하기 위한 클래스 
@@ -59,7 +58,7 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = username.text;
 
         // 입력한 지역을 설정합니다.
-        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = region.text;
+        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = region.options[region.value].text;
        
         // 서버 접속
         PhotonNetwork.LoadLevel("Photon Lobby"); 

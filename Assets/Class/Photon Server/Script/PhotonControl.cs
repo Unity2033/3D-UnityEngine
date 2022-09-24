@@ -10,10 +10,7 @@ public class PhotonControl : MonoBehaviourPun
     public int health = 100;
 
     public Camera cam;
-    public GameObject effect;
     public LayerMask layer;
-
-    RaycastHit hit;
 
     private void Start()
     {
@@ -41,29 +38,6 @@ public class PhotonControl : MonoBehaviourPun
         (
            0, Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime, 0
         );
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, layer))
-            {         
-                PhotonControl control = hit.transform.GetComponent<PhotonControl>();
-
-                if(control == null)
-                {
-                    return;
-                }
-
-                GameObject hitEffect = Instantiate(effect);
-
-                hitEffect.transform.position = hit.point;
-
-                control.photonView.RPC("Damage", RpcTarget.All);
-
-                Destroy(hitEffect,0.1f);
-            }
-        }
 
         if (health <= 0)
         {
