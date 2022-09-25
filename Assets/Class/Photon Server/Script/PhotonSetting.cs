@@ -1,7 +1,7 @@
-using UnityEngine;
-using Photon.Pun;
-using UnityEngine.UI;
 using PlayFab;
+using Photon.Pun;
+using UnityEngine;
+using UnityEngine.UI;
 using PlayFab.ClientModels;
 
 public class PhotonSetting : MonoBehaviourPunCallbacks
