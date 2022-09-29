@@ -9,6 +9,11 @@ public class Infomation : MonoBehaviourPunCallbacks
     {
         RoomData.text = Name + " ( "+ Currecnt + " / " + Max + ")";
     }
+
+    public void OnClickJoinRoom()
+    {
+        PhotonNetwork.JoinRoom("WWW");
+    }
 }
 
 

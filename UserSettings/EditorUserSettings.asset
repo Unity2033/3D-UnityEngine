@@ -5,6 +5,21 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
+    RecentlyUsedSceneGuid-0:
+      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 06000d5751000b090c570d7713755b4441164d28792b22352e794a31b5b83268
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 560406560402590359595e7747270c4442161a282f7a24357b704a63b5b7623d
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 01080d54520c51590b5e0d7743735c4410161a7f7c7d76342f2c4565e7b4306c
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 52015152005659095a5a582111270b44434f4c28752b23617c7a4f31b6b13761
+      flags: 0
     RecentlyUsedScenePath-0:
       value: 2242470311464678010f1f315f0f56171e0357192f2d283562051434eaf4741dfae63bf9eb3f7129370bfb25
       flags: 0
@@ -12,13 +27,13 @@ EditorUserSettings:
       value: 2242470311464678010f1f315f13571f0218166a1f2d3426283b5200e1e53a3dadd73ee6f335317c1e03e2394a2b0f36e613
       flags: 0
     RecentlyUsedScenePath-2:
-      value: 2242470311464678010f1f315f13571f0218166a1f2d3426283b5200e1e53a3dadd73ee6f335317c0b0de0314a2b0f36e613
-      flags: 0
-    RecentlyUsedScenePath-3:
       value: 2242470311464678010f1f315f13571f0218166a1f2d3426283b5200e1e53a3dadd73ee6f335317c0a07fb280d300671e704001fef
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-3:
       value: 2242470311464678010f1f315f13571f0218166a1f2d3426283b5200e1e53a3dadd73ee6f335317c150ded3e1d701431fb1e10
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 2242470311464678010f1f315f13571f0218166a1f2d3426283b5200e1e53a3dadd73ee6f335317c0b0de0314a2b0f36e613
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
@@ -28,9 +43,13 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
+  m_DesiredImportWorkerCount: 3
+  m_StandbyImportWorkerCount: 2
+  m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
   m_VCOverwriteFailedCheckoutAssets: 1
   m_VCProjectOverlayIcons: 1
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 0
+  m_ArtifactGarbageCollection: 1

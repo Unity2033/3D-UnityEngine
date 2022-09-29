@@ -14,11 +14,6 @@ public class GameManager : MonoBehaviourPunCallbacks
                  Quaternion.identity
             );
     }
-
-    public override void OnLeftRoom()
-    {
-        PhotonNetwork.LoadLevel("Photon Lobby");
-    }
 }
 
 

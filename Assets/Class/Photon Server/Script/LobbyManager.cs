@@ -12,6 +12,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public GameObject RoomPrefab;
     public Transform RoomContent;
 
+    // 룸 목록을 저장하기 위한 자료구조
     Dictionary<string, RoomInfo> RoomCatalog = new Dictionary<string, RoomInfo>();
 
     void Update()
@@ -73,7 +74,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
 
     void UpdateRoom(List<RoomInfo> roomList)
-    {     
+    {
         for (int i = 0; i < roomList.Count; i++)
         {
             // 해당 이름이 RoomCatalog의 key 값으로 설정되어 있다면
