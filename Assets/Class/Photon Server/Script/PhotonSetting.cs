@@ -11,7 +11,8 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
     [SerializeField] InputField email;
     [SerializeField] InputField password;
     [SerializeField] InputField username;
- 
+
+
     public void SignUp()
     {
         // RegisterPlayFabUserRequest : 서버에 유저를 등록하기 위한 클래스 

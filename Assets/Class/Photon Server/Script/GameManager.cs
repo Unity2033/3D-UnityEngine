@@ -14,6 +14,16 @@ public class GameManager : MonoBehaviourPunCallbacks
                  Quaternion.identity
             );
     }
+
+    public void ExitGame()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.LoadLevel("Photon Room");
+    }
 }
 
 
