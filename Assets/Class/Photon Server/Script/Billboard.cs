@@ -9,6 +9,7 @@ public class Billboard : MonoBehaviourPun
     private void Start()
     {
         nickName.text = photonView.Owner.NickName;
+
     }
 
     void Update()
