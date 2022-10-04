@@ -61,8 +61,8 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
                     new StatisticUpdate {StatisticName = "Input_1", Value = score},
                 }
             },
-            (result) => { Debug.Log("값 저장 성공"); }, 
-            (error) => { Debug.Log("값 저장 실패"); }
+            (result) => {  }, 
+            (error) => {  }
             );
 
             PhotonView view = other.gameObject.GetComponent<PhotonView>();

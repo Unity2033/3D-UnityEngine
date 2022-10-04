@@ -1,6 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
-using System.Collections;
+
 public class GameManager : MonoBehaviourPunCallbacks
 {
     private void Start()
@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviourPunCallbacks
                  Random.Range(0, 5)), 
                  Quaternion.identity
             );
-
-        StartCoroutine(nameof(ObjectCreation));
     }
 
     public void ExitGame()
@@ -25,21 +23,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Photon Room");
     }
-
-    private IEnumerator ObjectCreation()
-    {
-        if(PhotonNetwork.IsMasterClient)
-        {
-            while(true)
-            {
-                PhotonNetwork.Instantiate("Crystal",new Vector3(0,0,5),Quaternion.identity);
-                yield return new WaitForSeconds(5f);             
-            }
-        }
-    }
-    
-
-
 }
 
 
