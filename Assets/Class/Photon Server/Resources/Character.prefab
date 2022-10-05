@@ -2865,7 +2865,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -8029261236514695709}
   - {fileID: 8410252544239981488}
-  - {fileID: 3095065429224851410}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -3037,7 +3036,6 @@ MonoBehaviour:
   speed: 5
   angleSpeed: 100
   temporaryCamera: {fileID: 2399741848596127478}
-  score: 0
 --- !u!54 &8126835195097849721
 Rigidbody:
   m_ObjectHideFlags: 0

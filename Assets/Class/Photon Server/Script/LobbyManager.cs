@@ -67,10 +67,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     // 해당 로비에 방 목록의 변경 사항이 있으면 호출(추가, 삭제, 참가)
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {
-        AllDeleteRoom();
-        UpdateRoom(roomList);
-        CreateRoomObject();
+    {        
+       AllDeleteRoom();
+       UpdateRoom(roomList);
+       CreateRoomObject();
     }
 
     void UpdateRoom(List<RoomInfo> roomList)
@@ -123,6 +123,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
             // 룸 정보를 입력합니다.
             room.GetComponent<Infomation>().SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);
-        }  
+        }
     }
 }

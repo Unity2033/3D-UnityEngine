@@ -1,18 +1,16 @@
 using Photon.Pun;
-using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class CharacterSystem : MonoBehaviourPun, IPunObservable
+public class CharacterSystem : MonoBehaviourPun
 {
     public float speed = 5.0f;
     public float angleSpeed;
   
     public Camera temporaryCamera;
     
-    public int score;
-
     private void Start()
     {
         // 현재 플레이어가 나 자신이라면 
@@ -52,18 +50,32 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     {
         if (other.gameObject.name == "Crystal(Clone)")
         {
-            score++;
-
-            PlayFabClientAPI.UpdatePlayerStatistics(new UpdatePlayerStatisticsRequest
+            if (photonView.IsMine)
             {
-                Statistics = new List<StatisticUpdate>
+                UIManager.instance.score++;
+            }
+
+            PlayFabClientAPI.UpdatePlayerStatistics
+            (
+                new UpdatePlayerStatisticsRequest
                 {
-                    new StatisticUpdate {StatisticName = "Input_1", Value = score},
-                }
-            },
-            (result) => {  }, 
-            (error) => {  }
-            );
+                    Statistics = new List<StatisticUpdate>
+                    {
+                         new StatisticUpdate
+                         {
+                             StatisticName = "Score", Value = UIManager.instance.score
+                         },
+                    }
+                },
+               (result) =>
+               {
+                   UIManager.instance.scoreText.text = "Current Crystal : " + UIManager.instance.score.ToString();
+               },
+               (error) =>
+               {
+                   UIManager.instance.scoreText.text = "No value saved.";
+               }
+           );
 
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
 
@@ -72,21 +84,7 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
                 PhotonNetwork.Destroy(other.gameObject);
             }
         }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        // 로컬 오브젝트라면 쓰기 부분이 실행됩니다.
-        if(stream.IsWriting)
-        {
-            // 네트워크를 통해 score 값을 보냅니다.
-            stream.SendNext(score);
-        }
-        else // 원격 오브젝트라면 읽기 부분이 실행됩니다.
-        {
-            // 네트워크를 통해서 score 값을 받습니다.
-            score = (int)stream.ReceiveNext();
-        }
+        
     }
 }
 
