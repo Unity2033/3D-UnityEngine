@@ -4,11 +4,12 @@ using PlayFab.ClientModels;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSystem : MonoBehaviourPun
+public class CharacterSystem : MonoBehaviourPun, IPunObservable
 {
     public float speed = 5.0f;
     public float angleSpeed;
-  
+
+    public static int score;
     public Camera temporaryCamera;
     
     private void Start()
@@ -46,36 +47,49 @@ public class CharacterSystem : MonoBehaviourPun
         );
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        // 로컬 오브젝트라면 쓰기 부분이 실행됩니다.
+        if (stream.IsWriting)
+        {
+            // 네트워크를 통해 score 값을 보냅니다.
+            stream.SendNext(score);
+        }
+        else // 원격 오브젝트라면 읽기 부분이 실행됩니다.
+        {
+            // 네트워크를 통해서 score 값을 받습니다.
+            score = (int)stream.ReceiveNext();
+        }
+    }
+
+    public void PlayfabDataSave()
+    {
+        if (photonView.IsMine) score++;
+     
+        PlayFabClientAPI.UpdatePlayerStatistics
+        (
+            new UpdatePlayerStatisticsRequest
+            {
+                Statistics = new List<StatisticUpdate>
+                {
+                         new StatisticUpdate
+                         {
+                             StatisticName = "Score", 
+                             Value = score
+                         },
+                }
+            },
+           (result) => { UIManager.instance.scoreText.text = "Current Crystal : " + score.ToString(); },
+           (error) => { UIManager.instance.scoreText.text = "No value saved."; }
+       );
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Crystal(Clone)")
         {
-            if (photonView.IsMine)
-            {
-                UIManager.instance.score++;
-            }
-
-            PlayFabClientAPI.UpdatePlayerStatistics
-            (
-                new UpdatePlayerStatisticsRequest
-                {
-                    Statistics = new List<StatisticUpdate>
-                    {
-                         new StatisticUpdate
-                         {
-                             StatisticName = "Score", Value = UIManager.instance.score
-                         },
-                    }
-                },
-               (result) =>
-               {
-                   UIManager.instance.scoreText.text = "Current Crystal : " + UIManager.instance.score.ToString();
-               },
-               (error) =>
-               {
-                   UIManager.instance.scoreText.text = "No value saved.";
-               }
-           );
+            PlayfabDataSave();
 
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
 
@@ -83,8 +97,7 @@ public class CharacterSystem : MonoBehaviourPun
             {
                 PhotonNetwork.Destroy(other.gameObject);
             }
-        }
-        
+        }      
     }
 }
 

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 30336480}
   - component: {fileID: 30336479}
   - component: {fileID: 30336478}
-  - component: {fileID: 30336481}
   m_Layer: 5
   m_Name: Challenger Lobby
   m_TagString: Untagged
@@ -208,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30336481}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConnectServer, Assembly-CSharp
         m_MethodName: SelectLobby
         m_Mode: 1
@@ -258,20 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30336476}
   m_CullTransparentMesh: 1
---- !u!114 &30336481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30336476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edfcf8f845d68647bac9669a09a485c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lobbyName: {fileID: 513209716}
-  lobbyType: Challenger Lobby
 --- !u!1 &38030604
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +682,6 @@ GameObject:
   - component: {fileID: 681713424}
   - component: {fileID: 681713423}
   - component: {fileID: 681713422}
-  - component: {fileID: 681713425}
   m_Layer: 5
   m_Name: Unique Lobby
   m_TagString: Untagged
@@ -770,7 +754,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 681713425}
+      - m_Target: {fileID: 1966647678}
         m_TargetAssemblyTypeName: ConnectServer, Assembly-CSharp
         m_MethodName: SelectLobby
         m_Mode: 1
@@ -820,20 +804,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681713420}
   m_CullTransparentMesh: 1
---- !u!114 &681713425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681713420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edfcf8f845d68647bac9669a09a485c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lobbyName: {fileID: 1766833582}
-  lobbyType: Unique Lobby
 --- !u!1 &894399058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1090,6 @@ GameObject:
   - component: {fileID: 1648165118}
   - component: {fileID: 1648165117}
   - component: {fileID: 1648165116}
-  - component: {fileID: 1648165119}
   m_Layer: 5
   m_Name: Platinum Lobby
   m_TagString: Untagged
@@ -1193,7 +1162,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1648165119}
+      - m_Target: {fileID: 1966647678}
         m_TargetAssemblyTypeName: ConnectServer, Assembly-CSharp
         m_MethodName: SelectLobby
         m_Mode: 1
@@ -1243,20 +1212,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648165114}
   m_CullTransparentMesh: 1
---- !u!114 &1648165119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648165114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edfcf8f845d68647bac9669a09a485c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lobbyName: {fileID: 79190219}
-  lobbyType: Platinum Lobby
 --- !u!1 &1691783821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,6 +1360,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766833580}
   m_CullTransparentMesh: 1
+--- !u!1 &1966647677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966647679}
+  - component: {fileID: 1966647678}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1966647678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966647677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edfcf8f845d68647bac9669a09a485c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyName: {fileID: 513209716}
+  lobbyType: Challenger Lobby
+--- !u!4 &1966647679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966647677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1827.6743, y: 76.16283, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090318148728154
 GameObject:
   m_ObjectHideFlags: 0
