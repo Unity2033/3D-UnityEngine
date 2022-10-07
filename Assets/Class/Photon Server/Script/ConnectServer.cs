@@ -1,24 +1,16 @@
 using Photon.Pun; // 게임 내부에서 데이터 주고 받는 라이브러리
-using UnityEngine.UI;
 using Photon.Realtime;
 
 public class ConnectServer : MonoBehaviourPunCallbacks
 {
-    public Text lobbyName;
-    public string lobbyType;
+    private string serverName;
 
-    private void Start()
+    public void SelectServer(string text)
     {
-        lobbyName.text = lobbyType;
-    }
+        serverName = text;
 
-    public void SelectLobby()
-    {
         // 서버 접속
-        if (PhotonNetwork.IsConnected == false)
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
+        PhotonNetwork.ConnectUsingSettings();      
     }
 
     public override void OnJoinedLobby()
@@ -31,6 +23,6 @@ public class ConnectServer : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {     
         // JoinLobby : 특정 로비를 생성하여 진입하는 방법
-        PhotonNetwork.JoinLobby(new TypedLobby("Count", LobbyType.Default));
+        PhotonNetwork.JoinLobby(new TypedLobby(serverName, LobbyType.Default));
     }
 }
