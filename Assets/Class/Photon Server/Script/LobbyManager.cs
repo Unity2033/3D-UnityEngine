@@ -7,7 +7,7 @@ using Photon.Realtime; // 어느 서버에 접속했을 때 이벤트를 호출�
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public InputField RoomName, RoomPerson;
-    public Button RoomCreate, RoomJoin;
+    public Button RoomCreate;
 
     public GameObject RoomPrefab;
     public Transform RoomContent;
@@ -17,11 +17,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if(RoomName.text.Length > 0)
-            RoomJoin.interactable = true;
-        else
-            RoomJoin.interactable = false;
-
         if(RoomName.text.Length > 0 && RoomPerson.text.Length > 0)
             RoomCreate.interactable = true;
         else
@@ -44,25 +39,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         // 룸을 생성하는 함수
         PhotonNetwork.CreateRoom(RoomName.text, Room);
-    }
-
-    public void OnClickJoinRoom()
-    {    
-         PhotonNetwork.JoinRoom(RoomName.text);
-    }
-
-    // 룸 생성이 완료된 후 호출되는 콜백 함수
-    public override void OnCreatedRoom()
-    {
-        Debug.Log("Created Room");
-    }
-
-    // 룸으로 입장이 실패했을 때 호출되는 콜백 함수
-    public override void OnJoinRoomFailed(short returnCode, string message)
-    {
-        // 네트워크 연결이 실패했을 때 return 코드 번호를 이용해서 에러를 검출합니다.
-        // 룸이 생성되지 않았을 때 호출합니다.
-        Debug.Log($"JoinRoom Filed {returnCode}:{message}");
     }
 
     // 해당 로비에 방 목록의 변경 사항이 있으면 호출(추가, 삭제, 참가)

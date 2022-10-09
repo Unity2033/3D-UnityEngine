@@ -10,9 +10,7 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
     [SerializeField] InputField email;
     [SerializeField] InputField password;
-    [SerializeField] InputField username;
-
-
+ 
     public void SignUp()
     {
         // RegisterPlayFabUserRequest : 서버에 유저를 등록하기 위한 클래스 
@@ -20,8 +18,6 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         {
             Email = email.text,       // 입력한 Email
             Password = password.text, // 입력한 비밀번호
-            Username = username.text,  // 입력한 유저 이름
-            DisplayName = username.text
         };
 
         PlayFabClientAPI.RegisterPlayFabUser
@@ -52,17 +48,10 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = false;
 
-        // 같은 버전의 유저끼리 접속을 허용합니다.
-        // 같은 버전만 접속할 수 있도록 상수로 되어있는 문자열을 설정합니다.
         PhotonNetwork.GameVersion = "1.0f";
 
-        // 유저 아이디 설정
-        PhotonNetwork.NickName = username.text;
-
-        // 입력한 지역을 설정합니다.
         PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = region.options[region.value].text;
        
-        // 서버 접속
         PhotonNetwork.LoadLevel("Photon Lobby"); 
     }
 
