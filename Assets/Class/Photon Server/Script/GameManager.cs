@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnLeftRoom()
-    {
+    {  
         PhotonNetwork.LoadLevel("Photon Room");
     }
 }

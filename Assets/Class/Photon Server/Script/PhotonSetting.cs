@@ -57,16 +57,31 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
     public void LoginFailure(PlayFabError error)
     {
-        Debug.Log("로그인 실패");
+        NotificationManager.NotificationWindow
+        (
+            "Login failed",
+            "There are currently no accounts registered on the server. " +
+            "\n\n Please enter your ID and password correctly." 
+        );
     }
 
     public void SignUpSuccess(RegisterPlayFabUserResult result)
     {
-        Debug.Log("회원 가입 성공");
+        NotificationManager.NotificationWindow
+        (
+            "Membership successful",
+            "Congratulations on becoming a member." +
+            "\n\n Your current game server email account and password have been registered."
+        );
     }
 
     public void SignUpFailure(PlayFabError error)
     {
-        Debug.Log("회원 가입 실패");
+        NotificationManager.NotificationWindow
+        (
+            "Failed to Sign Up",
+            "Membership registration failed due to a current server error." +
+            "\n\n Please try to register as a member again."
+        );
     }
 }

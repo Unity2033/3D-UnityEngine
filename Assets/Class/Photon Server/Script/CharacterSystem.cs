@@ -3,14 +3,16 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSystem : MonoBehaviourPun, IPunObservable
 {
     public float speed = 5.0f;
     public float angleSpeed;
 
-    public static int score;
+    public int score;
     public Camera temporaryCamera;
+    [SerializeField] Text scoreText;
     
     private void Start()
     {
@@ -79,8 +81,8 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
                          },
                 }
             },
-           (result) => { UIManager.instance.scoreText.text = "Current Crystal : " + score.ToString(); },
-           (error) => { UIManager.instance.scoreText.text = "No value saved."; }
+           (result) => { scoreText.text = "Current Crystal : " + score.ToString(); },
+           (error) => { scoreText.text = "No value saved."; }
        );
     }
 

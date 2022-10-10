@@ -13,7 +13,7 @@ public class NotificationManager : MonoBehaviour
     {
         if (prefab == null)
         {
-            prefab = (GameObject)Resources.Load("Game Result Window");
+            prefab = (GameObject)Resources.Load("Notification Window");
         }
 
         GameObject obj = Instantiate(prefab);

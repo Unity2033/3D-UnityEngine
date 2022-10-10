@@ -1,42 +1,9 @@
 using Photon.Pun; // 게임 내부에서 데이터 주고 받는 라이브러리
-using UnityEngine;
-using UnityEngine.UI;
 using Photon.Realtime;
-using PlayFab.ClientModels;
 
 public class ConnectServer : MonoBehaviourPunCallbacks
 {
-    public string nickName;
     private string serverName;
-
-   // public Button cancleButton;
-    public InputField GameID;
-    public Image namePanel;
-
-    private void Start()
-    {
-        // 유저 아이디 설정
-        PhotonNetwork.NickName = nickName = PlayerPrefs.GetString("Name");
-
-        if (nickName.Length == 0)
-        {
-            namePanel.gameObject.SetActive(true);
-        }
-    }
-
-    public void NickNameSetting()
-    {
-        // 유저 아이디 설정
-        PhotonNetwork.NickName = nickName = GameID.text;
-
-        PlayerPrefs.SetString("Name", nickName);
-
-        if (PhotonNetwork.NickName.Length != 0)
-        {
-            namePanel.gameObject.SetActive(false);
-        }    
-    }
-
 
     public void SelectServer(string text)
     {

@@ -6,14 +6,26 @@ using Photon.Realtime; // 어느 서버에 접속했을 때 이벤트를 호출�
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    public InputField RoomName, RoomPerson;
-    public Button RoomCreate;
+    public string nickName;
 
-    public GameObject RoomPrefab;
+    public Button RoomCreate;
     public Transform RoomContent;
+    public GameObject RoomPrefab, namePanel;
+    public InputField RoomName, RoomPerson, GameID;
 
     // 룸 목록을 저장하기 위한 자료구조
     Dictionary<string, RoomInfo> RoomCatalog = new Dictionary<string, RoomInfo>();
+
+    private void Start()
+    {
+        // 유저 아이디 설정
+        PhotonNetwork.NickName = PlayerPrefs.GetString("Name");
+
+        if (PhotonNetwork.NickName.Length == 0)
+        {
+            namePanel.SetActive(true);
+        }
+    }
 
     void Update()
     {
@@ -21,6 +33,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RoomCreate.interactable = true;
         else
             RoomCreate.interactable = false;
+    }
+
+    public void NickNameSetting()
+    {
+        // 유저 아이디 설정
+        PhotonNetwork.NickName = nickName = GameID.text;
+
+        PlayerPrefs.SetString("Name", nickName);
+
+        if (PhotonNetwork.NickName.Length != 0)
+        {
+            namePanel.SetActive(false);
+        }
     }
 
     public void OnClickCreateRoom()

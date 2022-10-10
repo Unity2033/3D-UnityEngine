@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-
-    public Text scoreText;
-    public Text leaderBoaderText;
+    GetLeaderboardRequest request = new GetLeaderboardRequest();
 
     private void Awake()
     {
@@ -20,30 +18,59 @@ public class UIManager : MonoBehaviour
 
     public void GetLeaderboard()
     {
-        var request = new GetLeaderboardRequest 
+        request = new GetLeaderboardRequest 
         { 
             StartPosition = 0,
             StatisticName = "Score",
-            MaxResultsCount = 20,
+            MaxResultsCount = 10,
             ProfileConstraints = new PlayerProfileViewConstraints()
             { 
                 ShowLocations = true, 
                 ShowDisplayName = true
             }
-        };
-     
+        };     
+    }
+
+    public void Ranking()
+    {
+        GetLeaderboard();
+
         PlayFabClientAPI.GetLeaderboard(request, (result) =>
         {
-            for (int i = 0; i < result.Leaderboard.Count; i++)
+            int i = 0;
+
+            for (i = 0; i < result.Leaderboard.Count; i++)
             {
-                var curBoard = result.Leaderboard[i];
-                leaderBoaderText.text += curBoard.Profile.Locations[0].CountryCode.Value 
-                + " / " +
-                curBoard.DisplayName +
-                " / " + 
-                curBoard.StatValue + "\n";
+                var curBoard = result.Leaderboard[i];        
             }
+
+            NotificationManager.NotificationWindow
+            (
+             "Leader Board",
+              result.Leaderboard[i].DisplayName + " - " + result.Leaderboard[i].StatValue + "\n"
+            );
         },
-        (error) => print("리더보드 불러오기 실패"));
+        (error) => 
+                NotificationManager.NotificationWindow
+                (
+                    "Failed to load data",
+                    "Failed to load leaderboard data from server. \n " +
+                    "Please check your internet connection."
+                ));
+    }
+
+    public void GetVirtualCurrency()
+    {
+        var request = new AddUserVirtualCurrencyRequest() 
+        { 
+            VirtualCurrency = "DM",
+            Amount = 10 
+        };
+
+        PlayFabClientAPI.AddUserVirtualCurrency
+        (
+            request, (result) => print("돈 얻기 성공! 현재 돈 : " + result.Balance),
+            (error) => print("돈 얻기 실패")
+        );
     }
 }
