@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
     {
         var request = new AddUserVirtualCurrencyRequest() 
         { 
-            VirtualCurrency = "DM",
+            VirtualCurrency = "RP",
             Amount = 10 
         };
 
@@ -71,6 +71,24 @@ public class UIManager : MonoBehaviour
         (
             request, (result) => print("돈 얻기 성공! 현재 돈 : " + result.Balance),
             (error) => print("돈 얻기 실패")
+        );
+    }
+
+    public void PurchaseItem()
+    {
+        var request = new PurchaseItemRequest()
+        {
+            CatalogVersion = "Game Shop",
+            ItemId = "Dragon Skin",
+            VirtualCurrency = "RP",
+            Price = 100
+        };
+
+        PlayFabClientAPI.PurchaseItem
+        (
+            request,
+            (result) => print("아이템 구입 성공"),
+            (error) => print("아이템 구입 실패")
         );
     }
 }

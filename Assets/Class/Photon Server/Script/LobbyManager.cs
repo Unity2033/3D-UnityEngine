@@ -84,13 +84,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
                 // RemovedFromList : (true) 룸에서 삭제가 되었을 때
                 if (roomList[i].RemovedFromList)
                 {
-                    // 딕셔너리에 있는 데이터를 삭제합니다.
                     RoomCatalog.Remove(roomList[i].Name);
                     continue;
                 }
             }
 
-            // 그렇지 않으면 roominfo를 RoomCatalog에 추가합니다.
             RoomCatalog[roomList[i].Name] = roomList[i];
         }
     }
