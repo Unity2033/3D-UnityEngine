@@ -1,20 +1,10 @@
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
     GetLeaderboardRequest request = new GetLeaderboardRequest();
-
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-    }
 
     public void GetLeaderboard()
     {
@@ -37,21 +27,18 @@ public class UIManager : MonoBehaviour
 
         PlayFabClientAPI.GetLeaderboard(request, (result) =>
         {
-            int i = 0;
-
-            for (i = 0; i < result.Leaderboard.Count; i++)
+            for (int i = 0; i < result.Leaderboard.Count; i++)
             {
-                var curBoard = result.Leaderboard[i];        
+                var curBoard = result.Leaderboard[i];
             }
 
             NotificationManager.NotificationWindow
             (
-             "Leader Board",
-              result.Leaderboard[i].DisplayName + " - " + result.Leaderboard[i].StatValue + "\n"
+               "Leader Board",   
+                result.Leaderboard[0].DisplayName + " - " + result.Leaderboard[0].StatValue + "\n"
             );
         },
-        (error) => 
-                NotificationManager.NotificationWindow
+        (error) => NotificationManager.NotificationWindow
                 (
                     "Failed to load data",
                     "Failed to load leaderboard data from server. \n " +

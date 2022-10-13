@@ -12,6 +12,7 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
 
     public int score;
     public Camera temporaryCamera;
+
     [SerializeField] Text scoreText;
     
     private void Start()
@@ -71,14 +72,10 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         PlayFabClientAPI.UpdatePlayerStatistics
         (
             new UpdatePlayerStatisticsRequest
-            {
+            { 
                 Statistics = new List<StatisticUpdate>
                 {
-                         new StatisticUpdate
-                         {
-                             StatisticName = "Score", 
-                             Value = score
-                         },
+                    new StatisticUpdate { StatisticName = "Score", Value = score },
                 }
             },
            (result) => { scoreText.text = "Current Crystal : " + score.ToString(); },
