@@ -4,25 +4,12 @@ using UnityEngine;
 
 public class GenericStoneDelete : MonoBehaviour
 {
-    Rigidbody rigid;
-
-    private void Start()
-    {
-        rigid = GetComponent<Rigidbody>();
-    }
-
-    // OnBecameInvisible : °ÔÀÓ ¿ÀºêÁ§Æ®°¡ È­¸é ¹ÛÀ¸·Î ÀÌµ¿ÇßÀ» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    // OnBecameInvisible : ê²Œì„ ì˜¤ë¸Œì íŠ¸ê°€ í™”ë©´ ë°–ìœ¼ë¡œ ì´ë™í–ˆì„ ë•Œ ë™ì‘í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     private void OnBecameInvisible()
     {
         if (gameObject.name == "Stone_3(Clone)")
         {
             Destroy(gameObject);
-        }
-        else if (gameObject.name == "Stone_5(Clone)")
-        {
-            rigid.velocity = Vector3.zero;
-            gameObject.transform.position = new Vector3(0, 5, 0);
-            ObjectPool.objpool.InsertQueue(gameObject);
         }
     }
 }
