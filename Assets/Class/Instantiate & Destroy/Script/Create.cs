@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Create : MonoBehaviour
 {
-    public GameObject Prefab;
+    public GameObject prefab;
+    public Transform [] randomPosition;
 
     public void GenericCreate()
     {
-        Instantiate(Prefab, new Vector3(0, 5, 0), Quaternion.identity);
+        Instantiate
+        (
+            prefab, 
+            randomPosition[Random.Range(0,4)].position, 
+            Quaternion.identity
+        );
     }
 }
+
+
 
 
