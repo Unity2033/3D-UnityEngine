@@ -9,6 +9,8 @@ public class Create : MonoBehaviour
 
     public void GenericCreate()
     {
+        Delay.action();
+
         Instantiate
         (
             prefab, 
@@ -17,6 +19,8 @@ public class Create : MonoBehaviour
         );
     }
 }
+
+
 
 
 
