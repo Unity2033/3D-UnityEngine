@@ -16,14 +16,12 @@ public class Bee : MonoBehaviour
         managedPool = pool;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    void OnBecameInvisible()
+
+    private void OnBecameInvisible()
     {
         managedPool.Release(this);
     }
+
+  
 }
