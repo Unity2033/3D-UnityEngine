@@ -5,8 +5,6 @@ using UnityEngine.Pool;
 
 public class Bee : MonoBehaviour
 {
-    private Vector3 direction;
-
     [SerializeField] float speed = 3.0f;
 
     private IObjectPool<Bee> managedPool;
@@ -16,12 +14,14 @@ public class Bee : MonoBehaviour
         managedPool = pool;
     }
 
-
-
-    private void OnBecameInvisible()
+    private void Update()
     {
-        managedPool.Release(this);
-    }
+        transform.position += new Vector3(0, 0.01f, 0f);
 
-  
+        //if (Screen.height >= 5)
+        //{
+        //    managedPool.Release(this);
+        //    transform.position = new Vector3(0, 0.0f, 0f);
+        //}
+    }
 }

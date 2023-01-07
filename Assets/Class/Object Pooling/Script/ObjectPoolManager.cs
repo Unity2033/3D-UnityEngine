@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class BeeCreate : MonoBehaviour
+public class ObjectPoolManager : MonoBehaviour
 {
     [SerializeField] GameObject beePrefab;
 
@@ -39,7 +39,7 @@ public class BeeCreate : MonoBehaviour
 
     private Bee CreateBee()
     {
-        Bee bee = Instantiate(beePrefab).GetComponent<Bee>();
+        Bee bee = Instantiate(beePrefab,new Vector3(0f,0.75f,0.3f), Quaternion.identity).GetComponent<Bee>();
         bee.SetManaged(beePool);
         return bee;
     }
