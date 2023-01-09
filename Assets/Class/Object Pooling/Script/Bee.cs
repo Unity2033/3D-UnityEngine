@@ -5,23 +5,23 @@ using UnityEngine.Pool;
 
 public class Bee : MonoBehaviour
 {
+    private GameObject target;
     [SerializeField] float speed = 3.0f;
 
-    private IObjectPool<Bee> managedPool;
+    public IObjectPool<Bee> managedPool;
+
+    private void Start()
+    {
+        target = GameObject.Find("MARMO MIDDLE");
+    }
 
     public void SetManaged(IObjectPool<Bee> pool)
     {
         managedPool = pool;
     }
 
-    private void Update()
+    public void Release()
     {
-        transform.position += new Vector3(0, 0.01f, 0f);
-
-        //if (Screen.height >= 5)
-        //{
-        //    managedPool.Release(this);
-        //    transform.position = new Vector3(0, 0.0f, 0f);
-        //}
+        managedPool.Release(this);
     }
 }

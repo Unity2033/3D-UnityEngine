@@ -17,12 +17,12 @@ public class ObjectPoolManager : MonoBehaviour
             OnGetBee,
             OnReleaseBee,
             OnDestroyBee,
-            maxSize : 20       
+            maxSize : 5       
        );
     }
 
     private void Start()
-    {
+    {       
         StartCoroutine(GenerateScheduleCycle());
     }
 
@@ -39,8 +39,15 @@ public class ObjectPoolManager : MonoBehaviour
 
     private Bee CreateBee()
     {
-        Bee bee = Instantiate(beePrefab,new Vector3(0f,0.75f,0.3f), Quaternion.identity).GetComponent<Bee>();
+        Bee bee = Instantiate
+        (
+            beePrefab,
+            Random.onUnitSphere * 2.5f,     
+            Quaternion.identity
+        ).GetComponent<Bee>();
+
         bee.SetManaged(beePool);
+
         return bee;
     }
 
@@ -57,5 +64,10 @@ public class ObjectPoolManager : MonoBehaviour
     private void OnDestroyBee(Bee bee)
     {
         Destroy(bee);
+    }
+
+    public void ObjectRelease()
+    {
+        beePrefab.GetComponent<Bee>().Release();
     }
 }
