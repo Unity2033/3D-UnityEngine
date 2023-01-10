@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Pool;
 
 public class ObjectPoolManager : MonoBehaviour
 {
+    [SerializeField] Button sprayButton;
     [SerializeField] GameObject beePrefab;
 
     private IObjectPool<Bee> beePool;
@@ -22,20 +24,20 @@ public class ObjectPoolManager : MonoBehaviour
     }
 
     private void Start()
-    {       
+    {
         StartCoroutine(GenerateScheduleCycle());
+        sprayButton.GetComponent<Button>().onClick.AddListener(ObjectRelease);
     }
 
     IEnumerator GenerateScheduleCycle()
     {
         while (true)
         {
-            yield return new WaitForSeconds(3f);
-
             beePool.Get();
+
+            yield return new WaitForSeconds(3f);
         }
     }
-
 
     private Bee CreateBee()
     {
@@ -45,6 +47,13 @@ public class ObjectPoolManager : MonoBehaviour
             Random.onUnitSphere * 2.5f,     
             Quaternion.identity
         ).GetComponent<Bee>();
+
+        int index = bee.name.IndexOf("(Clone)");
+
+        if (index > 0)
+        {
+            bee.name = bee.name.Substring(0, index);
+        }
 
         bee.SetManaged(beePool);
 
@@ -67,7 +76,12 @@ public class ObjectPoolManager : MonoBehaviour
     }
 
     public void ObjectRelease()
-    {
-        beePrefab.GetComponent<Bee>().Release();
+    {    
+         beePrefab = GameObject.FindGameObjectWithTag("Bee");
+
+        if (beePrefab != null)
+        {
+             beePrefab.GetComponent<Bee>().Release();
+        }
     }
 }
