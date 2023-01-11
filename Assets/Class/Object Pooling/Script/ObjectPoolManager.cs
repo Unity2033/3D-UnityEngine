@@ -43,9 +43,7 @@ public class ObjectPoolManager : MonoBehaviour
     {
         Bee bee = Instantiate
         (
-            beePrefab,
-            Random.onUnitSphere * 2.5f,     
-            Quaternion.identity
+            beePrefab, Random.onUnitSphere * 2.5f, Quaternion.identity
         ).GetComponent<Bee>();
 
         int index = bee.name.IndexOf("(Clone)");
@@ -77,7 +75,7 @@ public class ObjectPoolManager : MonoBehaviour
 
     public void ObjectRelease()
     {    
-         beePrefab = GameObject.FindGameObjectWithTag("Bee");
+        beePrefab = GameObject.Find("FantasyBee");
 
         if (beePrefab != null)
         {

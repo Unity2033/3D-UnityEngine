@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprayButton: {fileID: 645506496}
-  beePrefab: {fileID: 1046869630431942, guid: c717f817a496cf247a92b830b355a407, type: 3}
+  beePrefab: {fileID: 4144428974544020114, guid: 48d7903d50204a5429b15e367acf0e40,
+    type: 3}
 --- !u!4 &82927672
 Transform:
   m_ObjectHideFlags: 0
