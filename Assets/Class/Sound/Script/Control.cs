@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 public class Control : MonoBehaviour
@@ -18,6 +18,6 @@ public class Control : MonoBehaviour
 
         Vector3 direction = new Vector3(x, 0, z);
 
-        control.Move(direction * speed * Time.deltaTime);
+        control.SimpleMove(direction * speed);
     }
 }
