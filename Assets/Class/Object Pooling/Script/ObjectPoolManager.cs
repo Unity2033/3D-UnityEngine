@@ -77,9 +77,6 @@ public class ObjectPoolManager : MonoBehaviour
     {    
         beePrefab = GameObject.Find("FantasyBee");
 
-        if (beePrefab != null)
-        {
-             beePrefab.GetComponent<Bee>().Release();
-        }
+        beePrefab.GetComponent<Bee>().Release();    
     }
 }
