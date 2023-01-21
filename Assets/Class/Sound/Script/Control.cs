@@ -16,7 +16,7 @@ public class Control : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(x, 0, z);
+        Vector3 direction = new Vector3(x, 0, z).normalized;
 
         control.SimpleMove(direction * speed);
     }

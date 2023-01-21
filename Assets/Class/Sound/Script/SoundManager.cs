@@ -5,16 +5,22 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] AudioClip [] audioClip;
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource soundSource;
+    [SerializeField] AudioSource effectSource;
+
+    private void Start()
+    {
+        soundSource.spatialBlend = 1;
+    }
 
     public void SoundCall(int count)
     {
-        audioSource.PlayOneShot(audioClip[count]);
+        effectSource.PlayOneShot(audioClip[count]);
     }
 
     public void Volume(float volume)
     {
-        audioSource.volume = volume;
+        soundSource.volume = volume;
     }
 }
 

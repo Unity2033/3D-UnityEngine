@@ -25,18 +25,14 @@ public class ObjectPoolManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(GenerateScheduleCycle());
+        InvokeRepeating(nameof(GenerateScheduleCycle), 1, 1);
+
         sprayButton.GetComponent<Button>().onClick.AddListener(ObjectRelease);
     }
 
-    IEnumerator GenerateScheduleCycle()
+    public void GenerateScheduleCycle()
     {
-        while (true)
-        {
-            beePool.Get();
-
-            yield return new WaitForSeconds(3f);
-        }
+         beePool.Get();          
     }
 
     private Bee CreateBee()
