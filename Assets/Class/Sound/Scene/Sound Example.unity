@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 1700995320}
   - component: {fileID: 1700995319}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1816,7 +1816,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9a41b8790935504cbdb11690e264891, type: 3}
   - {fileID: 8300000, guid: bfff2f26995b3b64c9904f571bea8e9a, type: 3}
   - {fileID: 8300000, guid: a7627f163e28c7341832e85aec0ce15d, type: 3}
-  audioSource: {fileID: 292523948}
+  soundSource: {fileID: 292523948}
+  effectSource: {fileID: 1761482842}
 --- !u!4 &1761482844
 Transform:
   m_ObjectHideFlags: 0

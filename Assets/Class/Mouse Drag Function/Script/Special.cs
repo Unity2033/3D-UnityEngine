@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class Special : MonoBehaviour
 {
-    Rigidbody rigid;
-    ParticleSystem effect;
+    private Rigidbody rigid;
+    [SerializeField] GameObject state;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        effect = GetComponentInChildren<ParticleSystem>();
+    }
+
+    void OnBecameInvisible()
+    {
+        transform.position = Vector3.up * 10;
     }
 
     private void OnMouseDown()
     {
-        effect.Play();
+        state.SetActive(true);
     }
 
     private void OnMouseDrag()
@@ -36,6 +40,7 @@ public class Special : MonoBehaviour
 
     private void OnMouseUp()
     {
+        state.SetActive(false);
         rigid.isKinematic = false;
     }
 }
