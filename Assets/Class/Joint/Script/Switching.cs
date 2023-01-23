@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Switching : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class Switching : MonoBehaviour
             Time.timeScale = 1;
             buttonImage.sprite = buttonSprite[1];
         }
+    }
+
+
+    public void Originally()
+    {
+        SceneManager.GetActiveScene();
     }
 }
 
