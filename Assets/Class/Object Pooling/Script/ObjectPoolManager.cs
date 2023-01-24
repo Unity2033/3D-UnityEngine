@@ -70,9 +70,9 @@ public class ObjectPoolManager : MonoBehaviour
     }
 
     public void ObjectRelease()
-    {    
-        beePrefab = GameObject.Find("FantasyBee");
+    {
+            beePrefab = GameObject.Find("FantasyBee");
 
-        beePrefab.GetComponent<Bee>().Release();    
+            beePrefab.GetComponent<Bee>().Release();
     }
 }
