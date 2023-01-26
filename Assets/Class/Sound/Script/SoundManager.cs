@@ -6,11 +6,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource soundSource;
     [SerializeField] AudioSource effectSource;
 
-    private void Start()
-    {
-        soundSource.spatialBlend = 1;
-    }
-
     public void SoundCall(int count)
     {
         effectSource.PlayOneShot(audioClip[count]);
@@ -20,6 +15,7 @@ public class SoundManager : MonoBehaviour
     {
         soundSource.volume = volume;
     }
+
 }
 
 
