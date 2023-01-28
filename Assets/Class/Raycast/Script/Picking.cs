@@ -21,15 +21,8 @@ public class Picking : MonoBehaviour
         // 광선을 발사한 다음 광선과 충돌한 게임 오브젝트가 있다면 hit 변수에 데이터를 저장합니다.  
         if (Physics.Raycast(ray, out hit, layer)) // layer는 해당 layer만 검출하여 충돌을 처리합니다.
         {
-            switch (Random.Range(0, 3))
-            {
-                case 0 :  hit.transform.GetComponent<MeshFilter>().mesh = Resources.Load<Mesh>("Penguin");
-                    break;
-                case 1 : hit.transform.GetComponent<MeshFilter>().mesh = Resources.Load<Mesh>("Monkey");
-                    break;
-                case 2 : hit.transform.GetComponent<MeshFilter>().mesh = Resources.Load<Mesh>("Bear");
-                    break;
-            }
+            hit.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("Bat Material");
+      
         }
     }
 }
