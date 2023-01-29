@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 127868779}
   - component: {fileID: 127868778}
   - component: {fileID: 127868777}
-  - component: {fileID: 127868780}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -208,18 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
---- !u!114 &127868780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127868776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1592719b229436428172fc98bff603d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &287626081
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +220,7 @@ GameObject:
   - component: {fileID: 287626084}
   - component: {fileID: 287626083}
   m_Layer: 5
-  m_Name: Vibration Button
+  m_Name: Watch Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,11 +241,11 @@ RectTransform:
   m_Father: {fileID: 1304995355}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -15}
-  m_SizeDelta: {x: 75, y: 75}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 175, y: 55}
+  m_SizeDelta: {x: 70, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287626083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,9 +290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127868780}
-        m_TargetAssemblyTypeName: CameraShake, Assembly-CSharp
-        m_MethodName: CameraEffect
+      - m_Target: {fileID: 831048452}
+        m_TargetAssemblyTypeName: Observe, Assembly-CSharp
+        m_MethodName: EarthObservation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -335,7 +322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ab4b709d6c7491248b790f0cf06347de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46980d68e6e8ec046988dff7036771d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -553,6 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6217a0aa6da4945468d50f19e60acca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moon: {fileID: 1120662421}
   origin: {fileID: 616868760}
   speed: 100
 --- !u!135 &583569715
@@ -1263,7 +1251,6 @@ GameObject:
   - component: {fileID: 1120662425}
   - component: {fileID: 1120662424}
   - component: {fileID: 1120662423}
-  - component: {fileID: 1120662422}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -1271,18 +1258,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1120662422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120662421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87787d4450d2dc543804379526831294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &1120662423
 SphereCollider:
   m_ObjectHideFlags: 0

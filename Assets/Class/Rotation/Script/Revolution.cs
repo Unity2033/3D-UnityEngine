@@ -1,22 +1,33 @@
 using UnityEngine;
+using System.Collections;
 
 public class Revolution : MonoBehaviour
 {
-    public float speed = 1.0f; // 회전 속도
+    public GameObject moon;
     public GameObject origin; // 기준 축이 되는 게임 오브젝트
- 
-    void Update()
+    public float speed = 1.0f; // 회전 속도
+
+    private void Start()
     {
-        // (회전을 하기 위한 기준점이 되는 게임 오브젝트 지정), (회전할 축 설정), (회전 속도)
-        transform.RotateAround
-        (
-                origin.transform.position, 
-                Vector3.down, 
-                speed * Time.deltaTime
-        );
+        StartCoroutine(RotateCoroutine());
     }
 
+    IEnumerator RotateCoroutine()
+    {
+        while(true)
+        {
+            transform.RotateAround
+            (
+                origin.transform.position,
+                Vector3.down,
+                speed * Time.deltaTime
+            );
 
+            moon.transform.Rotate(0.1f, 0.1f, 0.1f);
+
+            yield return null;
+        }
+    }
 }
 
 

@@ -1,32 +1,35 @@
 using UnityEngine;
-using System.Text;
+
+public enum Level
+{
+    Level1,
+    Level2,
+    Level3
+}
 
 public class DataManager : MonoBehaviour
 {
-    Texture2D cursor;
     public int score;
+    Texture2D cursor;
+    public Level state;
 
     void Awake()
     {
         Load();
     }
 
-    private void Update()
+    public void LevelStatus()
     {
-        int count = score % 3;
-
-        switch (count)
+        switch (state)
         {
-            case 0:
-                cursor = Resources.Load<Texture2D>("Basic");
+            case Level.Level1 : cursor = Resources.Load<Texture2D>("Basic");
                 break;
-            case 1:
-                cursor = Resources.Load<Texture2D>("Hand");
+            case Level.Level2 : cursor = Resources.Load<Texture2D>("Hand");
                 break;
-            case 2:
-                cursor = Resources.Load<Texture2D>("Shoot");
+            case Level.Level3 : cursor = Resources.Load<Texture2D>("Shoot");
                 break;
         }
+
 
         Cursor.SetCursor(cursor, new Vector2(0, 0), CursorMode.Auto);
     }
