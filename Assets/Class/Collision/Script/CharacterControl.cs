@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterControll : MonoBehaviour
+public class CharacterControl : MonoBehaviour
 {
     bool condition;
     public float speed;
@@ -26,30 +26,27 @@ public class CharacterControll : MonoBehaviour
             rigid.AddForce(new Vector3(0, 200, 0));
             condition = false;
         }
-
     }
 
     private void FixedUpdate()
     {
-        rigid.MovePosition
-            (
-              rigid.position +
-              direction *
-              speed *
-              Time.deltaTime
-            );
+         rigid.MovePosition
+         (
+              rigid.position + direction *
+              speed * Time.deltaTime
+         );
     }
 
     // 물리적인 충돌을 했을 때 동작하는 함수입니다.
     private void OnCollisionEnter(Collision collision)
     {
-        condition = true;
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     // 물리적인 충돌을 하고 있을 때 동작하는 함수입니다.
     private void OnCollisionStay(Collision collision)
     {
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        condition = true;
     }
 
     // 물리적인 충돌을 벗어났을 때 동작하는 함수입니다.
