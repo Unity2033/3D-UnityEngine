@@ -40,7 +40,10 @@ public class CharacterControl : MonoBehaviour
     // 물리적인 충돌을 했을 때 동작하는 함수입니다.
     private void OnCollisionEnter(Collision collision)
     {
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        if (collision.gameObject.CompareTag("Fence"))
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
     }
 
     // 물리적인 충돌을 하고 있을 때 동작하는 함수입니다.
@@ -53,6 +56,10 @@ public class CharacterControl : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         condition = false;
-        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+
+        if (collision.gameObject.CompareTag("Fence"))
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 }
