@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
-    bool condition;
     public float speed;
 
     Rigidbody rigid;
@@ -19,20 +18,13 @@ public class CharacterControl : MonoBehaviour
     {
         direction.x = Input.GetAxis("Horizontal");
         direction.z = Input.GetAxis("Vertical");
-
-        if (Input.GetKeyDown(KeyCode.Space) && condition == true)
-        {
-            // AddForce : 객체에 일정한 힘을 가하는 함수입니다.
-            rigid.AddForce(new Vector3(0, 200, 0));
-            condition = false;
-        }
     }
 
     private void FixedUpdate()
     {
          rigid.MovePosition
          (
-              rigid.position + direction *
+              rigid.position + direction.normalized *
               speed * Time.deltaTime
          );
     }
@@ -42,24 +34,23 @@ public class CharacterControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fence"))
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
         }
     }
 
     // 물리적인 충돌을 하고 있을 때 동작하는 함수입니다.
     private void OnCollisionStay(Collision collision)
     {
-        condition = true;
+       
     }
 
     // 물리적인 충돌을 벗어났을 때 동작하는 함수입니다.
     private void OnCollisionExit(Collision collision)
     {
-        condition = false;
-
+      
         if (collision.gameObject.CompareTag("Fence"))
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            
         }
     }
 }

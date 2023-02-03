@@ -13,11 +13,6 @@ public class DataManager : MonoBehaviour
     Texture2D cursor;
     public Level state;
 
-    void Awake()
-    {
-        Load();
-    }
-
     public void LevelStatus()
     {
         switch (state)
@@ -33,16 +28,4 @@ public class DataManager : MonoBehaviour
 
         Cursor.SetCursor(cursor, new Vector2(0, 0), CursorMode.Auto);
     }
-
-    public void Save()
-    {
-        PlayerPrefs.SetInt("Score", score);
-    }
-
-    public void Load()
-    {
-        score = PlayerPrefs.GetInt("Score");
-    }
-
- 
 }
