@@ -34,7 +34,9 @@ public class CharacterControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fence"))
         {
-
+            ContactPoint cp = collision.GetContact(0);
+            Vector3 dir = transform.position - cp.point; // 접촉지점에서부터 탄위치 의 방향
+            rigid.AddForce(dir.normalized * 300f);
         }
     }
 

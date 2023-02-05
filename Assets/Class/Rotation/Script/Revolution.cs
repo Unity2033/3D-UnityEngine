@@ -4,8 +4,8 @@ using System.Collections;
 public class Revolution : MonoBehaviour
 {
     public GameObject moon;
-    public GameObject origin; // 기준 축이 되는 게임 오브젝트
-    public float speed = 1.0f; // 회전 속도
+    public GameObject origin; 
+    public float speed = 1.0f; 
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class Revolution : MonoBehaviour
             yield return null;
         }
     }
+
 }
 
 
