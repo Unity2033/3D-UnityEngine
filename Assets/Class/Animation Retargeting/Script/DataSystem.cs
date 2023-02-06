@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class DataSystem : MonoBehaviour
 {
-    public float speed;
+    private float speed;
 
-    void Start()
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+        set
+        {
+            speed = value;
+        }
+
+    }
+
+
+    void Awake()
     {
         Load();
     }
