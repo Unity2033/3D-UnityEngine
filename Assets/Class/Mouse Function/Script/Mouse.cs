@@ -1,29 +1,20 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Mouse : MonoBehaviour
 {
-    private Rigidbody rigid;
+    [SerializeField] Rigidbody rigid;
     [SerializeField] GameObject state;
-
-    void Start()
-    {
-        rigid = GetComponent<Rigidbody>();
-    }
-
-    void OnBecameInvisible()
-    {
-        transform.position = Vector3.up * 10;
-    }
+    [SerializeField] VideoPlayer video;
 
     private void OnMouseDown()
     {
         state.SetActive(true);
+        rigid.isKinematic = true;
     }
 
     private void OnMouseDrag()
     {
-        rigid.isKinematic = true;
-
         // 마우스의 위치를 설정합니다.
         Vector3 mouseposition = new Vector3
         (
