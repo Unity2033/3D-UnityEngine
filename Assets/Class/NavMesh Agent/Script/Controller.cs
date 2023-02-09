@@ -1,16 +1,29 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class Controller : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    public int count;
     public float speed = 5.0f;
-   
-    public void Move(Vector3 Position)
+    public Transform [ ] point;
+    public NavMeshAgent navMeshAgent;
+
+    private void Start()
     {
-        agent.speed = speed;
-        agent.SetDestination(Position);
+        InvokeRepeating(nameof(Move), 1, 5f);
+    }
+
+    public void Move()
+    {
+        if (navMeshAgent.velocity == Vector3.zero)
+        {
+            if (point.Length <= count)
+            {
+                 count = 0;
+            }
+
+            navMeshAgent.SetDestination(point[count++].position);
+        }
     }
 
 }
