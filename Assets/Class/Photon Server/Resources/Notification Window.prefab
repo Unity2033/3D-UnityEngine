@@ -555,7 +555,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2457446214669290267}
         m_TargetAssemblyTypeName: NotificationManager, Assembly-CSharp
-        m_MethodName: CloseWindow
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

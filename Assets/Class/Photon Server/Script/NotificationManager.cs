@@ -6,28 +6,21 @@ public class NotificationManager : MonoBehaviour
     [SerializeField] Text title;
     [SerializeField] Text content;
 
-    private static GameObject prefab;
-
-    // NotificationManager를 전역에서 접근할 수 있는 함수
     public static NotificationManager NotificationWindow(string titleMessage, string contentMessage)
     {
-        if (prefab == null)
-        {
-            prefab = (GameObject)Resources.Load("Notification Window");
-        }
+        GameObject notification = Instantiate(Resources.Load<GameObject>("Notification Window"));
 
-        GameObject obj = Instantiate(prefab);
+        NotificationManager resultWindow = notification.GetComponent<NotificationManager>();
 
-        NotificationManager resultPopup = obj.GetComponent<NotificationManager>();
+        resultWindow.title.text = titleMessage;
+        resultWindow.content.text = contentMessage;
 
-        resultPopup.title.text = titleMessage;
-        resultPopup.content.text = contentMessage;
-
-        return resultPopup;
+        return resultWindow;
     }
 
-    public void CloseWindow()
+    public void Close()
     {
         Destroy(gameObject);
     }
+
 }
