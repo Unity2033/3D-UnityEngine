@@ -6,8 +6,6 @@ using PlayFab.ClientModels;
 
 public class PhotonSetting : MonoBehaviourPunCallbacks
 {
-    [SerializeField] Dropdown region;
-
     [SerializeField] InputField email;
     [SerializeField] InputField password;
  
@@ -50,8 +48,6 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = "1.0f";
 
-        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = region.options[region.value].text;
-       
         PhotonNetwork.LoadLevel("Photon Lobby"); 
     }
 
@@ -71,7 +67,7 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         (
             "Membership successful",
             "Congratulations on becoming a member." +
-            "\n\n Your current game server email account and password have been registered."
+            "\n\n Your email account has been registered on the game server."
         );
     }
 
