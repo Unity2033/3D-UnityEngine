@@ -15,7 +15,6 @@ public class ConnectServer : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        // PhotonNetwork.LoadLevel 사용하는 이유는 씬 동기화를 맞추기 위해 사용해야 합니다.
         // 일반 LoadLevel은 씬 동기화가 되지 않습니다.
         PhotonNetwork.LoadLevel("Photon Room");
     }
