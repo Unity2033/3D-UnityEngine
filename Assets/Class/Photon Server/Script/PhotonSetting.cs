@@ -7,6 +7,7 @@ using PlayFab.ClientModels;
 public class PhotonSetting : MonoBehaviourPunCallbacks
 {
     [SerializeField] InputField email;
+    [SerializeField] InputField userID;
     [SerializeField] InputField password;
  
     public void SignUp()
@@ -16,7 +17,10 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         {
             Email = email.text,       // 입력한 Email
             Password = password.text, // 입력한 비밀번호
+            Username = userID.text    // 입력한 게임 ID
         };
+
+        PlayerPrefs.SetString("Name", userID.text);
 
         PlayFabClientAPI.RegisterPlayFabUser
         (
@@ -25,6 +29,8 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
             SignUpFailure  // 회원 가입이 실패했을 때 함수
         );
     }
+
+
 
     public void Login()
     {
@@ -35,12 +41,12 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
         };
 
         PlayFabClientAPI.LoginWithEmailAddress
-            (
-              request,
-              LoginSuccess,
-              LoginFailure
-            );
-     }
+        (
+            request,
+            LoginSuccess,
+            LoginFailure
+        );
+    }
 
     public void LoginSuccess(LoginResult result)
     {
@@ -48,7 +54,9 @@ public class PhotonSetting : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = "1.0f";
 
-        PhotonNetwork.LoadLevel("Photon Lobby"); 
+        PhotonNetwork.NickName = PlayerPrefs.GetString("Name");
+
+        PhotonNetwork.LoadLevel("Photon Lobby");
     }
 
     public void LoginFailure(PlayFabError error)
