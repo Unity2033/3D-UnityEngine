@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 612203200}
   - component: {fileID: 612203199}
   m_Layer: 0
-  m_Name: Lobby Manager
+  m_Name: Room Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,11 +589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomCreate: {fileID: 352464454}
-  RoomContent: {fileID: 48894415}
-  RoomPrefab: {fileID: 4956241890421037237, guid: 006b3d9257e3acd4f86ba3954c8eac59,
-    type: 3}
   RoomName: {fileID: 1588679643}
   RoomPerson: {fileID: 1071818886}
+  RoomContent: {fileID: 48894415}
 --- !u!4 &612203200
 Transform:
   m_ObjectHideFlags: 0

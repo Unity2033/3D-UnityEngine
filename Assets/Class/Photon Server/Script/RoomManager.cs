@@ -4,12 +4,12 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime; // 어느 서버에 접속했을 때 이벤트를 호출하는 라이브러리
 
-public class LobbyManager : MonoBehaviourPunCallbacks
+public class RoomManager : MonoBehaviourPunCallbacks
 {
     public Button RoomCreate;
+    public InputField RoomName;
+    public InputField RoomPerson;
     public Transform RoomContent;
-    public GameObject RoomPrefab;
-    public InputField RoomName, RoomPerson;
 
     // 룸 목록을 저장하기 위한 자료구조
     Dictionary<string, RoomInfo> RoomCatalog = new Dictionary<string, RoomInfo>();
@@ -20,6 +20,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RoomCreate.interactable = true;
         else
             RoomCreate.interactable = false;
+    }
+
+    // 룸에 입장한 후 호출되는 콜백 함수
+    public override void OnJoinedRoom()
+    {
+        PhotonNetwork.LoadLevel("Photon Game");
     }
 
     public void OnClickCreateRoom()
@@ -77,11 +83,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    // 룸에 입장한 후 호출되는 콜백 함수
-    public override void OnJoinedRoom()
-    {
-        PhotonNetwork.LoadLevel("Photon Game");
-    }
 
     public void CreateRoomObject()
     {
@@ -89,7 +90,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         foreach (RoomInfo info in RoomCatalog.Values)
         {
             // 룸을 생성합니다.
-            GameObject room = Instantiate(RoomPrefab);
+            GameObject room = Instantiate(Resources.Load<GameObject>("Room"));
 
             // RoomContect의 하위 오브젝트로 설정합니다.
             room.transform.SetParent(RoomContent);
