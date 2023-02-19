@@ -9,11 +9,11 @@ public class Billboard : MonoBehaviourPun
     private void Start()
     {
         nickName.text = photonView.Owner.NickName;
-
     }
 
     void Update()
     {
         transform.forward = Camera.main.transform.forward;
     }
+
 }

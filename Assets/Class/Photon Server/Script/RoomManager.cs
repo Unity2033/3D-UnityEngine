@@ -96,7 +96,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             room.transform.SetParent(RoomContent);
 
             // 룸 정보를 입력합니다.
-            room.GetComponent<Infomation>().SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);
+            room.GetComponent<Information>().SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);
         }
     }
 }

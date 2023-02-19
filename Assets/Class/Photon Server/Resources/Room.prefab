@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4956241890358162968}
   - component: {fileID: 4956241890358162969}
   m_Layer: 5
-  m_Name: Infomation
+  m_Name: Information Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,4 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564a09f0e7a11524fba6954706238a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomData: {fileID: 4956241890358162969}
+  roomData: {fileID: 4956241890358162969}

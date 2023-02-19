@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 62fa28cbb204e4546a2ad5c1580ee188
+guid: 69e23ab12525ab248b5fdcfd6807e3f2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -17,7 +17,7 @@ ModelImporter:
     second: //RootNode
   - first:
       43: 4300000
-    second: fence_double
+    second: fence2
   - first:
       95: 9500000
     second: //RootNode
