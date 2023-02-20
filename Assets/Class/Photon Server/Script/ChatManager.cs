@@ -5,14 +5,13 @@ using Photon.Pun;
 public class ChatManager : MonoBehaviourPunCallbacks
 {
     public InputField input;
-    public GameObject ChatPrefab;
     public Transform ChatContent;
 
     void Update()
-    { 
-        if(Input.GetKeyDown(KeyCode.Return))
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (input.text.Length == 0) return;
+            if (input.text.Length == 0) return; 
 
             // InputField에 있는 텍스트를 가져옵니다.
             string chat = PhotonNetwork.NickName + " : " +input.text;
@@ -26,7 +25,7 @@ public class ChatManager : MonoBehaviourPunCallbacks
     void RpcAddChat(string msg)
     {
         // ChatPrefab을 하나 만들어서 text에 값을 설정합니다.
-        GameObject chat = Instantiate(ChatPrefab);
+        GameObject chat = Instantiate(Resources.Load<GameObject>("String"));
         chat.GetComponent<Text>().text = msg;
 
         // 스크롤 뷰 - content에 자식으로 등록합니다.

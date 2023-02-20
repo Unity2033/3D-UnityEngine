@@ -1,20 +1,16 @@
 using Photon.Pun;
-using PlayFab;
-using PlayFab.ClientModels;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CharacterSystem : MonoBehaviourPun, IPunObservable
 {
-    public float speed = 5.0f;
     public float angleSpeed;
+    public Vector3 direction;
+    public float speed = 5.0f;
 
-    public int score;
+    public float health;
     public Camera temporaryCamera;
 
-    [SerializeField] Text scoreText;
-    
     private void Start()
     {
         // 현재 플레이어가 나 자신이라면 
@@ -33,12 +29,12 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     {
         if (!photonView.IsMine) return;
         
-        Vector3 direction = new Vector3
+        direction = new Vector3
         (
             Input.GetAxis("Horizontal"),
             0, 
             Input.GetAxis("Vertical")
-       );
+        );
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
 
@@ -56,44 +52,25 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         if (stream.IsWriting)
         {
             // 네트워크를 통해 score 값을 보냅니다.
-            stream.SendNext(score);
+            stream.SendNext(health);
         }
         else // 원격 오브젝트라면 읽기 부분이 실행됩니다.
         {
             // 네트워크를 통해서 score 값을 받습니다.
-            score = (int)stream.ReceiveNext();
+            health = (float)stream.ReceiveNext();
         }
     }
 
-    public void PlayfabDataSave()
-    {
-        if (photonView.IsMine) score++;
-     
-        PlayFabClientAPI.UpdatePlayerStatistics
-        (
-            new UpdatePlayerStatisticsRequest
-            { 
-                Statistics = new List<StatisticUpdate>
-                {
-                    new StatisticUpdate { StatisticName = "Score", Value = score },
-                }
-            },
-           (result) => { scoreText.text = "Current Crystal : " + score.ToString(); },
-           (error) => { scoreText.text = "No value saved."; }
-       );
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Crystal(Clone)")
+        if (other.gameObject.CompareTag("Character"))
         {
-            PlayfabDataSave();
-
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
 
+            Camera.main.GetComponent<CameraShake>().Shake(1, 0.25f);
+
             if (view.IsMine)
-            {
+            {       
                 PhotonNetwork.Destroy(other.gameObject);
             }
         }      

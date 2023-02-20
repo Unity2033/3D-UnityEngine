@@ -16,14 +16,20 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
-        {
-
+        {   
+            Instantiate
+            (
+                 Resources.Load<GameObject>("Bee"),
+                 RandomPosition(Random.Range(1, 25)),
+                 Quaternion.identity
+            ); 
+            
         }
     }
 
     public Vector3 RandomPosition(float value)
     {
-        // 원의 방정식
+        #region 원의 방정식
         /*
            x^2 + z^2 <= r^2
            원의 방정식에서 임의의 x랑 z에 해당하는 점이 반지름 r인 원 안에 존재하는 범위입니다.
@@ -36,6 +42,7 @@ public class GameManager : MonoBehaviourPunCallbacks
            z = 0.95 (근사값)
            반지름 1인 원의 값으로 (0.3, 0.95)
         */
+        #endregion
 
         // 게임 오브젝트를 중심으로 기준 반지름 원을 설정합니다.
         float radius = value;
@@ -52,7 +59,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             z = -z;
         }
 
-        return new Vector3(x, 0, z);
+        return new Vector3(x, 1.575f, z);
     }
 
     public void ExitGame()

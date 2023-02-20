@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class Control : MonoBehaviour
 {
     public float speed = 5.0f;
     private CharacterController control;
 
     void Start()
-    {
+    {   
         control = GetComponent<CharacterController>();
     }
 
