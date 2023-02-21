@@ -1,15 +1,17 @@
 using Photon.Pun;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class CharacterSystem : MonoBehaviourPun, IPunObservable
 {
-    public float angleSpeed;
-    public Vector3 direction;
-    public float speed = 5.0f;
+    [SerializeField] float angleSpeed;
+    [SerializeField] Vector3 direction;
+    [SerializeField] float speed = 5.0f;
 
-    public float health;
-    public Camera temporaryCamera;
+    [SerializeField] float mouseX;
+    [SerializeField] float health;
+    [SerializeField] Camera temporaryCamera;
 
     private void Start()
     {
@@ -38,12 +40,9 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
 
-        transform.eulerAngles += new Vector3
-        (
-           0, 
-           Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime, 
-           0
-        );
+        mouseX += Input.GetAxis("Mouse X") * angleSpeed * Time.deltaTime;
+
+        transform.eulerAngles = new Vector3(0, mouseX, 0);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -62,18 +61,21 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Character"))
+    {      
+        if(other.gameObject.CompareTag("Bee"))
         {
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
 
-            Camera.main.GetComponent<CameraShake>().Shake(1, 0.25f);
+            StartCoroutine(temporaryCamera.GetComponent<CameraShake>().Shake(0.5f, 0.25f));
 
             if (view.IsMine)
-            {       
+            {
+                view.GetComponent<CharacterSystem>().health -= 20;
+
                 PhotonNetwork.Destroy(other.gameObject);
             }
-        }      
+        }
+
     }
 }
 

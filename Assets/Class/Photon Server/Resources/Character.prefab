@@ -2777,7 +2777,7 @@ GameObject:
   - component: {fileID: 5577160268849503494}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3037,6 +3037,7 @@ MonoBehaviour:
   angleSpeed: 100
   direction: {x: 0, y: 0, z: 0}
   speed: 5
+  mouseX: 0
   health: 0
   temporaryCamera: {fileID: 2399741848596127478}
 --- !u!54 &8126835195097849721

@@ -1,29 +1,35 @@
 using UnityEngine;
 using Photon.Pun;
+using System.Collections;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
     private void Awake()
     {
-        PhotonNetwork.Instantiate
-        (
-             "Character",
-             RandomPosition(10),
-             Quaternion.identity
-        );
+        StartCoroutine(Spawn("Character", 10));
     }
 
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
-        {   
-            Instantiate
+        {
+            StartCoroutine(Spawn("Bee", 100));
+        }
+    }
+
+
+    IEnumerator Spawn(string name, float radius)
+    {
+        while(true)
+        {
+            PhotonNetwork.Instantiate
             (
-                 Resources.Load<GameObject>("Bee"),
-                 RandomPosition(Random.Range(1, 25)),
-                 Quaternion.identity
-            ); 
-            
+                name,
+                RandomPosition(radius),
+                Quaternion.identity
+            );
+
+            yield return new WaitForSeconds(5);
         }
     }
 
@@ -59,7 +65,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             z = -z;
         }
 
-        return new Vector3(x, 1.575f, z);
+        return new Vector3(x, 1, z);
     }
 
     public void ExitGame()

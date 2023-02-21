@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Chat;
 
 public class ChatManager : MonoBehaviourPunCallbacks
 {
@@ -36,6 +37,8 @@ public class ChatManager : MonoBehaviourPunCallbacks
 
         // input 텍스트를 초기화합니다.
         input.text = "";
+
+       
     }
 
 }
