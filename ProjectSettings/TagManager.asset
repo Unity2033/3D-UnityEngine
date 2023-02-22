@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Undefined
   - Bee
-  - Character
   layers:
   - Default
   - TransparentFX

@@ -17,13 +17,13 @@ public class ChatManager : MonoBehaviourPunCallbacks
             // InputField에 있는 텍스트를 가져옵니다.
             string chat = PhotonNetwork.NickName + " : " +input.text;
 
-            // RpcTarget.All : 현재 룸에 있는 모든 클라이언트에게 RpcAddChat함수를 실행하라는 명령을 합니다.
-            photonView.RPC("RpcAddChat", RpcTarget.All, chat);
+            // RpcTarget.All : 현재 룸에 있는 모든 클라이언트에게 Chatting 함수를 실행하라는 명령을 합니다.
+            photonView.RPC("Chatting", RpcTarget.All, chat);
         }
     }
 
     [PunRPC]
-    void RpcAddChat(string msg)
+    void Chatting(string msg)
     {
         // ChatPrefab을 하나 만들어서 text에 값을 설정합니다.
         GameObject chat = Instantiate(Resources.Load<GameObject>("String"));
@@ -36,9 +36,6 @@ public class ChatManager : MonoBehaviourPunCallbacks
         input.ActivateInputField();
 
         // input 텍스트를 초기화합니다.
-        input.text = "";
-
-       
+        input.text = "";  
     }
-
 }

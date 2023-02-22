@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 4620596033148801105}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Character
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

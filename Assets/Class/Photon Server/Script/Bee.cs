@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
-    private GameObject target;
     private Vector3 direction;
+    private GameObject target;
+    private float speed = 1.0f;
 
     void Start()
     {
@@ -18,6 +19,6 @@ public class Bee : MonoBehaviour
 
     void Update()
     {
-        transform.position += direction * 0.1f * Time.deltaTime;
+        transform.position += direction * speed * Time.deltaTime;
     }
 }
