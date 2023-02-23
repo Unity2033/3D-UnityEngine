@@ -1,6 +1,4 @@
 using Photon.Pun;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class CharacterSystem : MonoBehaviourPun, IPunObservable
@@ -10,8 +8,14 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
     [SerializeField] float speed = 5.0f;
 
     [SerializeField] float mouseX;
-    [SerializeField] float health;
+    [SerializeField] float health = 100;
     [SerializeField] Camera temporaryCamera;
+
+    void Awake()
+    {    
+        // OnPhotonSerializeView 초당 호출하는 수
+        PhotonNetwork.SerializationRate = 10;
+    }
 
     private void Start()
     {
@@ -33,9 +37,7 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         
         direction = new Vector3
         (
-            Input.GetAxis("Horizontal"),
-            0, 
-            Input.GetAxis("Vertical")
+            Input.GetAxisRaw("Horizontal"), 0,  Input.GetAxisRaw("Vertical")
         );
 
         transform.Translate(direction.normalized * speed * Time.deltaTime);
@@ -50,14 +52,14 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         // 로컬 오브젝트라면 쓰기 부분이 실행됩니다.
         if (stream.IsWriting)
         {
-            // 네트워크를 통해 score 값을 보냅니다.
+            // 네트워크를 통해 데이터를 보냅니다.
             stream.SendNext(health);
         }
         else // 원격 오브젝트라면 읽기 부분이 실행됩니다.
         {
-            // 네트워크를 통해서 score 값을 받습니다.
+            // 네트워크를 통해서 데이터 받습니다.
             health = (float)stream.ReceiveNext();
-        }
+        }    
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,18 +67,18 @@ public class CharacterSystem : MonoBehaviourPun, IPunObservable
         if(other.gameObject.CompareTag("Bee"))
         {
             PhotonView view = other.gameObject.GetComponent<PhotonView>();
-
             StartCoroutine(temporaryCamera.GetComponent<CameraShake>().Shake(0.5f, 0.25f));
 
             if (view.IsMine)
             {
-                view.GetComponent<CharacterSystem>().health -= 20;
+               health -= 20;
 
-                PhotonNetwork.Destroy(other.gameObject);
+               PhotonNetwork.Destroy(other.gameObject);
             }
         }
-
     }
+
+
 }
 
 

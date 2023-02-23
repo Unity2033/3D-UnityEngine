@@ -3038,7 +3038,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   speed: 5
   mouseX: 0
-  health: 0
+  health: 100
   temporaryCamera: {fileID: 2399741848596127478}
 --- !u!54 &8126835195097849721
 Rigidbody:

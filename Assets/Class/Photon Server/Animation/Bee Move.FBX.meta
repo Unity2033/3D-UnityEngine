@@ -1,52 +1,134 @@
 fileFormatVersion: 2
 guid: 02332556bea4c4842b56d35cf2b338bc
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bone011
-    100002: Bone011(mirrored)
-    100004: Bone013
-    100006: Bone013(mirrored)
-    100008: Bone015
-    100010: Bone016
-    100012: Bone017
-    100014: Bone018
-    100016: Bone019
-    100018: Bone021
-    100020: Bone022
-    100022: Bone024
-    100024: Bone026
-    100026: Bone027
-    100028: Bone029
-    100030: Bone030
-    100032: Fantasy Bee
-    100034: //RootNode
-    400000: Bone011
-    400002: Bone011(mirrored)
-    400004: Bone013
-    400006: Bone013(mirrored)
-    400008: Bone015
-    400010: Bone016
-    400012: Bone017
-    400014: Bone018
-    400016: Bone019
-    400018: Bone021
-    400020: Bone022
-    400022: Bone024
-    400024: Bone026
-    400026: Bone027
-    400028: Bone029
-    400030: Bone030
-    400032: Fantasy Bee
-    400034: //RootNode
-    2100000: FantasyBeeMat
-    4300000: Fantasy Bee
-    7400000: Move
-    9500000: //RootNode
-    13700000: Fantasy Bee
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone011
+  - first:
+      1: 100002
+    second: Bone011(mirrored)
+  - first:
+      1: 100004
+    second: Bone013
+  - first:
+      1: 100006
+    second: Bone013(mirrored)
+  - first:
+      1: 100008
+    second: Bone015
+  - first:
+      1: 100010
+    second: Bone016
+  - first:
+      1: 100012
+    second: Bone017
+  - first:
+      1: 100014
+    second: Bone018
+  - first:
+      1: 100016
+    second: Bone019
+  - first:
+      1: 100018
+    second: Bone021
+  - first:
+      1: 100020
+    second: Bone022
+  - first:
+      1: 100022
+    second: Bone024
+  - first:
+      1: 100024
+    second: Bone026
+  - first:
+      1: 100026
+    second: Bone027
+  - first:
+      1: 100028
+    second: Bone029
+  - first:
+      1: 100030
+    second: Bone030
+  - first:
+      1: 100032
+    second: Fantasy Bee
+  - first:
+      1: 100034
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Bone011
+  - first:
+      4: 400002
+    second: Bone011(mirrored)
+  - first:
+      4: 400004
+    second: Bone013
+  - first:
+      4: 400006
+    second: Bone013(mirrored)
+  - first:
+      4: 400008
+    second: Bone015
+  - first:
+      4: 400010
+    second: Bone016
+  - first:
+      4: 400012
+    second: Bone017
+  - first:
+      4: 400014
+    second: Bone018
+  - first:
+      4: 400016
+    second: Bone019
+  - first:
+      4: 400018
+    second: Bone021
+  - first:
+      4: 400020
+    second: Bone022
+  - first:
+      4: 400022
+    second: Bone024
+  - first:
+      4: 400024
+    second: Bone026
+  - first:
+      4: 400026
+    second: Bone027
+  - first:
+      4: 400028
+    second: Bone029
+  - first:
+      4: 400030
+    second: Bone030
+  - first:
+      4: 400032
+    second: Fantasy Bee
+  - first:
+      4: 400034
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: FantasyBeeMat
+  - first:
+      43: 4300000
+    second: Fantasy Bee
+  - first:
+      74: 7400000
+    second: Bee Move
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Fantasy Bee
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -55,6 +137,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -73,8 +156,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Move
+      name: Bee Move
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -106,34 +190,47 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -143,13 +240,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

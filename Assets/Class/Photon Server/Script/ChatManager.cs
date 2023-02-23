@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Chat;
 
+
 public class ChatManager : MonoBehaviourPunCallbacks
 {
     public InputField input;
@@ -10,6 +11,15 @@ public class ChatManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            input.readOnly = true;
+        }
+        else
+        {
+            input.readOnly = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (input.text.Length == 0) return; 

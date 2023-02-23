@@ -7,7 +7,7 @@ public class Bee : MonoBehaviour
 {
     private Vector3 direction;
     private GameObject target;
-    private float speed = 1.0f;
+    private float speed = 5.0f;
 
     void Start()
     {
@@ -19,6 +19,6 @@ public class Bee : MonoBehaviour
 
     void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction.normalized * speed * Time.deltaTime;
     }
 }

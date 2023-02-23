@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public Vector3 RandomPosition(float value)
     {
+       
         // 게임 오브젝트를 중심으로 기준 반지름 원을 설정합니다.
         float radius = value;
 
@@ -41,14 +42,20 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        StartCoroutine(Spawn("Character", 10));
+        PhotonNetwork.Instantiate
+        (
+              "Character",
+              RandomPosition(10),
+              Quaternion.identity
+        );
+
     }
 
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            StartCoroutine(Spawn("Bee", 100));
+            StartCoroutine(Spawn("Bee", 50));
         }
     }
    
