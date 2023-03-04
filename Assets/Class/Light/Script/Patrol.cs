@@ -8,14 +8,14 @@ public class Patrol : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * 1 * Time.deltaTime);
+        transform.Translate(direction * Time.deltaTime);
 
-        if (transform.position.x >= 5f)
+        if (transform.position.x >= 2.5f)
         {
             direction = Vector3.forward;
             transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
         }
-        else if (transform.position.x <= -5f)
+        else if (transform.position.x <= -2.5f)
         {
             direction = Vector3.back;
             transform.localScale = new Vector3(3.5f, 3.5f, -3.5f);
