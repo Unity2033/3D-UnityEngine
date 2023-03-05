@@ -5,17 +5,16 @@ using UnityEngine;
 public class Create : MonoBehaviour
 {
     public GameObject prefab;
-    public Transform [] randomPosition;
 
     public void GenericCreate()
     {
         Delay.action();
 
-        Instantiate
+        Instantiate 
         (
-            prefab, 
-            randomPosition[Random.Range(0,4)].position, 
-            Quaternion.identity
+            prefab,
+            prefab.transform.position,
+            prefab.transform.rotation
         );
     }
 }
