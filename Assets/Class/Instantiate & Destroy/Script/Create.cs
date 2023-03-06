@@ -12,10 +12,10 @@ public class Create : MonoBehaviour
 
         Instantiate 
         (
-            prefab,
-            prefab.transform.position,
+            prefab, 
+            new Vector3(0, -1.25f, 0), 
             prefab.transform.rotation
-        );
+        ).AddComponent<Delete>();
     }
 }
 
