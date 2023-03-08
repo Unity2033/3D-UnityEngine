@@ -6,14 +6,7 @@ public class AnimationManager: MonoBehaviour
     private float speed = 10;
     [SerializeField] Animator [] animator;
 
-    private void Start()
-    {
-        for (int i = 0; i < animator.Length; i++)
-        {
-            animator[i].speed = speed / 10;
-        }
-    }
-
+   
     public void SpeedSetting()
     {
         if(speed++ >= 10)

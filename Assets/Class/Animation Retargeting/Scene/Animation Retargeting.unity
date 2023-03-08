@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 458339233}
   - component: {fileID: 458339232}
   m_Layer: 0
-  m_Name: Animator Control
+  m_Name: Animator Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
