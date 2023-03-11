@@ -1,20 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Arrival : MonoBehaviour
 {
-    NavMeshAgent agent;
-    public Transform arrive;
+    [SerializeField] NavMeshAgent navMeshAgent;
 
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
+    Vector3 point;
+    NavMeshHit hit;
+    public float range = 10.0f;
+    public float life = 10.0f;
 
     void Update()
     {
-        agent.SetDestination(arrive.position);
+        Vector3 randomPoint = transform.position + Random.insideUnitSphere * range;
+ 
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            point = hit.position;
+        }
+
+        navMeshAgent.destination = point;
+        
     }
+
 }
