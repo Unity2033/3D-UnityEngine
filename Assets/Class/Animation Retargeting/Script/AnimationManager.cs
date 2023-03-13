@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class AnimationManager: MonoBehaviour
 {
-    private bool condition;
+    private int count;
     private float speed = 10;
     [SerializeField] Animator [] animator;
 
-   
     public void SpeedSetting()
     {
-        if(speed++ >= 10)
-        {
+        if(speed++ >= 10) 
             speed = 1;
-        }
-
+        
         for(int i = 0; i < animator.Length; i++)
         {
             animator[i].speed = speed / 10;
@@ -22,19 +19,15 @@ public class AnimationManager: MonoBehaviour
 
     public void LayerMaskSetting(int layerIndex)
     {
-        condition = !condition;
+        count = count++ % 2;
 
-        switch (condition)
+        switch (count)
         {
-            case true : Camera.main.cullingMask = 1 << layerIndex;
+            case 0 : Camera.main.cullingMask = ~(1 << layerIndex);
                 break;
-            case false : Camera.main.cullingMask = ~(1 << layerIndex);
+            case 1 :  Camera.main.cullingMask = -1;
                 break;
         }
     }
 
-    public void Everything()
-    {
-        Camera.main.cullingMask = -1;
-    }
 }

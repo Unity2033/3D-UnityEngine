@@ -13,17 +13,15 @@ public class Arrival : MonoBehaviour
     public float range = 10.0f;
     public float life = 10.0f;
 
-    void Update()
+    public void RandomPosition()
     {
         Vector3 randomPoint = transform.position + Random.insideUnitSphere * range;
- 
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+
+        if (NavMesh.SamplePosition(randomPoint, out hit, 5.0f, NavMesh.AllAreas))
         {
             point = hit.position;
         }
 
         navMeshAgent.destination = point;
-        
     }
-
 }
