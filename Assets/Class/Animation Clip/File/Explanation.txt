@@ -1,5 +1,0 @@
-Information
-
-The way to output the current text is to load the content already written in the text file.
-
-Therefore, you must set the path correctly.
