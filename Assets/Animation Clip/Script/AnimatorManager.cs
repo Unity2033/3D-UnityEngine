@@ -8,7 +8,6 @@ public class AnimatorManager : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] float speed = 1.0f;
 
-
     void Update()
     {
         // 애니메이터 컨트롤러에서 현재 애니메이터의 상태의 이름이“close”일 때 
@@ -21,6 +20,7 @@ public class AnimatorManager : MonoBehaviour
             }
         }
     }
+
 
     public void Close()
     {

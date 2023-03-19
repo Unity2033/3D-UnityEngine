@@ -14,6 +14,7 @@ public class Parallax : MonoBehaviour
     {
         rect = rawImage.uvRect;
         rect.x += Time.deltaTime * speed;
+
         rawImage.uvRect = rect;
     }
 }
