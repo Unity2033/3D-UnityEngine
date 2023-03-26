@@ -6,13 +6,8 @@ public class AnimationAction : MonoBehaviour
 {
     public Animator animator;
 
-    public void Kick()
+    public void AnimationPlay(string name)
     {
-        animator.Play("Kick");
-    }
-
-    public void Running()
-    {
-        animator.Play("Running");
+        animator.Play(name);
     }
 }
