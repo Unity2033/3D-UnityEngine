@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Control : MonoBehaviour
 {
-    Vector3 direction;
     Rigidbody rigidBody;
+
     [SerializeField] float speed = 5.0f;
 
     void Start()
@@ -13,20 +14,15 @@ public class Control : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        direction.x = Input.GetAxis("Horizontal");
-        direction.z = Input.GetAxis("Vertical");    
-    }
-
-    private void FixedUpdate()
+    public void AddForceMessage()
     {
         rigidBody.AddForce
         (
-            direction.normalized * speed * Time.deltaTime,
-            ForceMode.Impulse        
-        );
+            transform.forward * speed,
+            ForceMode.Impulse
+       );      
     }
+
 
     // 물리적인 충돌을 했을 때 동작하는 함수입니다.
     private void OnCollisionEnter(Collision collision)
@@ -35,7 +31,7 @@ public class Control : MonoBehaviour
         {
             var result = Vector3.Reflect
                 (
-                  direction.normalized, 
+                  transform.position, 
                   collision.contacts[0].normal
                 );
 
