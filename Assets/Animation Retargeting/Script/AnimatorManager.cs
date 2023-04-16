@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AnimationRetargeting
 {
@@ -6,24 +7,31 @@ namespace AnimationRetargeting
     {
         private int count;
         private float speed = 10;
+
+        [SerializeField] Dropdown dropDown;
         [SerializeField] Animator[] animator;
+
+        public void CullingModeSelect()
+        {
+
+     
+        }
 
         public void SpeedSetting()
         {
-            if (speed++ >= 10)
-                speed = 1;
+            speed += speed + 1;
 
-            for (int i = 0; i < animator.Length; i++)
+            for (int i = 0; i < 2; i++)
             {
-                animator[i].speed = speed / 10;
+                animator[i].speed = speed % 10 / 10;
             }
         }
 
         public void LayerMaskSetting(int layerIndex)
         {
-            count = count++ % 2;
+            count = count % 2;
 
-            switch (count)
+            switch (count++)
             {
                 case 0:
                     Camera.main.cullingMask = ~(1 << layerIndex);

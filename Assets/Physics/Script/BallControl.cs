@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Control : MonoBehaviour
+public class BallControl : MonoBehaviour
 {
     Rigidbody rigidBody;
 
@@ -18,11 +18,19 @@ public class Control : MonoBehaviour
     {
         rigidBody.AddForce
         (
-            transform.forward * speed,
+            Vector3.forward * speed,
             ForceMode.Impulse
        );      
     }
 
+    public void AddTorqueMessage()
+    {
+        rigidBody.AddTorque
+        (
+            Vector3.up * speed,
+            ForceMode.Force
+        );
+    }
 
     // 물리적인 충돌을 했을 때 동작하는 함수입니다.
     private void OnCollisionEnter(Collision collision)
@@ -30,10 +38,10 @@ public class Control : MonoBehaviour
         if (collision.gameObject.CompareTag("Pawn"))
         {
             var result = Vector3.Reflect
-                (
-                  transform.position, 
-                  collision.contacts[0].normal
-                );
+            (
+                 transform.position.normalized, 
+                 collision.contacts[0].normal
+            );
 
             rigidBody.velocity = result * Mathf.Max(speed, 0f);
         }
