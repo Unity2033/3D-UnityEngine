@@ -35,7 +35,10 @@ public class RobotControl : MonoBehaviour
             }
         }
 
-        rigidBody.transform.position += direction.normalized * speed * Time.fixedDeltaTime;
+        rigidBody.transform.position += rigidBody.transform.TransformDirection
+        (
+            direction.normalized *  speed *  Time.fixedDeltaTime
+        );
     }
 
 }

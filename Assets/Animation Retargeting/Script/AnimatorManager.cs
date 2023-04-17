@@ -11,17 +11,11 @@ namespace AnimationRetargeting
         [SerializeField] Dropdown dropDown;
         [SerializeField] Animator[] animator;
 
-        public void CullingModeSelect()
-        {
-
-     
-        }
-
         public void SpeedSetting()
-        {
+        {    
             speed += speed + 1;
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < animator.Length; i++)
             {
                 animator[i].speed = speed % 10 / 10;
             }
@@ -39,6 +33,16 @@ namespace AnimationRetargeting
                 case 1:
                     Camera.main.cullingMask = -1;
                     break;
+            }
+        }
+
+        public void CullingModeSetting()
+        {
+            int index = dropDown.value;
+
+            for (int i = 0; i < animator.Length; i++)
+            {
+                animator[i].cullingMode = (AnimatorCullingMode)index;
             }
         }
     }
