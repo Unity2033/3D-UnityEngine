@@ -7,13 +7,16 @@ using UnityEngine;
 public class RobotControl : MonoBehaviour
 {
     public float speed = 2.5f;
-    public float radius = 2.0f;
+    public float radius = 1.5f;
 
     private Vector3 direction;
     private Rigidbody rigidBody;
 
     private void Start()
     {
+        Cursor.visible = false;                   
+        Cursor.lockState = CursorLockMode.Locked;   
+
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -31,9 +34,11 @@ public class RobotControl : MonoBehaviour
         {
             if (element.tag == "Billiard Ball")
             {
-                element.GetComponent<BallControl>().SendMessage("AddTorqueMessage");
+                element.GetComponent<PhysicsControl>().AddForceMessage(rigidBody.transform.forward);
             }
         }
+
+        rigidBody.rotation = rigidBody.rotation * Quaternion.Euler(0, Input.GetAxis("Mouse X"), 0);
 
         rigidBody.transform.position += rigidBody.transform.TransformDirection
         (
