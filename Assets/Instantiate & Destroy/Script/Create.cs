@@ -9,10 +9,9 @@ public class Create : MonoBehaviour
     public GameObject prefab;
 
     private bool active = true;
-    private float fixedTime = 5f;
     private float currentTime = 5f;
 
-    public void GenericCreate()
+    public void CreateGeneric()
     {
         active = false;
 
@@ -30,13 +29,13 @@ public class Create : MonoBehaviour
         {
             button.interactable = false;
             currentTime -= Time.deltaTime;
-            button.image.fillAmount = currentTime / fixedTime;
+            button.image.fillAmount = currentTime / 5f;
 
             if (currentTime <= 0)
             {
                 active = true;
                 button.interactable = true;
-                button.image.fillAmount = currentTime = fixedTime;
+                button.image.fillAmount = currentTime = 5f;
             }
         }
     }

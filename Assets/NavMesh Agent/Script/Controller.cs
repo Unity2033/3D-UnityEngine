@@ -7,21 +7,22 @@ public class Controller : MonoBehaviour
     public Transform [ ] point;
     public NavMeshAgent navMeshAgent;
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        InvokeRepeating("Move", 1, 5f);
+        if(other.gameObject.tag == "Player")
+        {
+            navMeshAgent.SetDestination(point[count++].position);
+        }
     }
 
-    public void Move()
+    private void OnTriggerExit(Collider other)
     {
-        if (navMeshAgent.velocity == Vector3.zero)
+        if (other.gameObject.tag == "Player")
         {
             if (point.Length <= count)
             {
-                 count = 0;
+                count = 0;
             }
-
-            navMeshAgent.SetDestination(point[count++].position);
         }
     }
 

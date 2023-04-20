@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Delete : MonoBehaviour
 {
-    int random = Random.Range(1, 5);
+    private int random;
 
     void Start()
     {
+        random = Random.Range(1, 5);
         Destroy(gameObject, random);
     }
 }
