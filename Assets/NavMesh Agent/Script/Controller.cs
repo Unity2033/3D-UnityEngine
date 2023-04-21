@@ -9,15 +9,19 @@ public class Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        ColliderEffect colliderEffect = other.GetComponent<ColliderEffect>();
+
+        if(colliderEffect != null)
         {
-            navMeshAgent.SetDestination(point[count++].position);
+            navMeshAgent.SetDestination(colliderEffect.ArrivalPosition(point[count++].position));
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        ColliderEffect colliderEffect = other.GetComponent<ColliderEffect>();
+
+        if (colliderEffect != null)
         {
             if (point.Length <= count)
             {
