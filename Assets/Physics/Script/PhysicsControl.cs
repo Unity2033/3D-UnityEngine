@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PhysicsControl : MonoBehaviour
 {
     Rigidbody rigidBody;
-
     [SerializeField] float speed = 1.0f;
 
     void Start()
@@ -25,7 +24,7 @@ public class PhysicsControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Pawn"))
+        if (collision.gameObject.CompareTag("Pillar"))
         {
             var result = Vector3.Reflect
             (
@@ -39,15 +38,18 @@ public class PhysicsControl : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-
+         // rigidBody.Sleep(); 
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        rigidBody.AddTorque
-        (
-           Vector3.up * speed,
-           ForceMode.Impulse
-        );
+        if (collision.gameObject.CompareTag("Pillar"))
+        {
+            rigidBody.AddTorque
+            (
+                Vector3.up * speed,
+                ForceMode.Impulse
+            );
+        }
     }
 }

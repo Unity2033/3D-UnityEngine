@@ -32,7 +32,7 @@ public class RobotControl : MonoBehaviour
 
         foreach (Collider element in colliders)
         {
-            if (element.tag == "Billiard Ball")
+            if (element.CompareTag("Billiard Ball"))
             {
                 element.GetComponent<PhysicsControl>().AddForceMessage(rigidBody.transform.forward);
             }
@@ -42,7 +42,7 @@ public class RobotControl : MonoBehaviour
 
         rigidBody.transform.position += rigidBody.transform.TransformDirection
         (
-            direction.normalized *  speed *  Time.fixedDeltaTime
+            direction.normalized * speed *  Time.fixedDeltaTime
         );
     }
 

@@ -13,21 +13,12 @@ public class Controller : MonoBehaviour
 
         if(colliderEffect != null)
         {
-            navMeshAgent.SetDestination(colliderEffect.ArrivalPosition(point[count++].position));
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        ColliderEffect colliderEffect = other.GetComponent<ColliderEffect>();
-
-        if (colliderEffect != null)
-        {
             if (point.Length <= count)
             {
                 count = 0;
             }
+
+            navMeshAgent.SetDestination(point[count++].position);
         }
     }
-
 }
