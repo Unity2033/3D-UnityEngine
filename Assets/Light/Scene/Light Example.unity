@@ -410,6 +410,64 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ad78d0b12ce54704689149db27068c99, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b2bd5ac12bffc4fb73d4fc9e07648f, type: 3}
+--- !u!1 &344088448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344088450}
+  - component: {fileID: 344088449}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!220 &344088449
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344088448}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 3, y: 1, z: 1}
+  - {x: 3, y: 1, z: -1}
+  - {x: 3, y: -1, z: 1}
+  - {x: 3, y: -1, z: -1}
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: -1, y: 1, z: 1}
+  - {x: -1, y: 1, z: -1}
+  - {x: -1, y: -1, z: 1}
+  - {x: -1, y: -1, z: -1}
+  m_Dering: 1
+--- !u!4 &344088450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344088448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 1, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &366126702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1170,92 +1228,6 @@ Transform:
   m_Father: {fileID: 366126703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1336303697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1336303699}
-  - component: {fileID: 1336303698}
-  m_Layer: 0
-  m_Name: Light Probe Group
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!220 &1336303698
-LightProbeGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336303697}
-  m_Enabled: 1
-  m_SourcePositions:
-  - {x: 3, y: 1, z: 1}
-  - {x: 3, y: 1, z: -1}
-  - {x: 3, y: -1, z: 1}
-  - {x: 3, y: -1, z: -1}
-  - {x: 1, y: 1, z: 1}
-  - {x: 1, y: 1, z: -1}
-  - {x: 1, y: -1, z: 1}
-  - {x: 1, y: -1, z: -1}
-  - {x: 2, y: -1, z: 0}
-  - {x: 2, y: -1, z: 0}
-  - {x: 3, y: 1, z: -1}
-  - {x: 3, y: 1, z: 1}
-  - {x: 3, y: 1, z: -1}
-  - {x: 3, y: -1, z: 1}
-  - {x: 3, y: -1, z: -1}
-  - {x: 1, y: 1, z: 1}
-  - {x: 1, y: 1, z: -1}
-  - {x: 1, y: -1, z: 1}
-  - {x: 1, y: -1, z: -1}
-  - {x: 2, y: -1, z: 0}
-  - {x: 2, y: -1, z: 0}
-  - {x: 3, y: 1, z: -1}
-  - {x: 5, y: 1, z: 1}
-  - {x: 5, y: 1, z: -1}
-  - {x: 5, y: -1, z: 1}
-  - {x: 5, y: -1, z: -1}
-  - {x: 3, y: 1, z: 1}
-  - {x: 3, y: 1, z: -1}
-  - {x: 3, y: -1, z: 1}
-  - {x: 3, y: -1, z: -1}
-  - {x: 4, y: -1, z: 0}
-  - {x: 4, y: -1, z: 0}
-  - {x: 5, y: 1, z: -1}
-  - {x: 5, y: 1, z: 1}
-  - {x: 5, y: 1, z: -1}
-  - {x: 5, y: -1, z: 1}
-  - {x: 5, y: -1, z: -1}
-  - {x: 3, y: 1, z: 1}
-  - {x: 3, y: 1, z: -1}
-  - {x: 3, y: -1, z: 1}
-  - {x: 3, y: -1, z: -1}
-  - {x: 4, y: -1, z: 0}
-  - {x: 4, y: -1, z: 0}
-  - {x: 5, y: 1, z: -1}
-  m_Dering: 1
---- !u!4 &1336303699
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336303697}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 1, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1437635940
 PrefabInstance:
   m_ObjectHideFlags: 0

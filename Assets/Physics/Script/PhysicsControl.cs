@@ -38,7 +38,10 @@ public class PhysicsControl : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-         // rigidBody.Sleep(); 
+        if (collision.gameObject.CompareTag("Billiard Ball"))
+        {
+            rigidBody.mass += 0.025f;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
