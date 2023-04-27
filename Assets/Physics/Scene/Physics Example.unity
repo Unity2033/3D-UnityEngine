@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9c7ba5185d28d475b902a82911b83e2c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Pillar
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9c7ba5185d28d475b902a82911b83e2c, type: 3}
       propertyPath: m_RootOrder
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 863943665}
   m_Layer: 0
   m_Name: Billiard Ball (Three)
-  m_TagString: Untagged
+  m_TagString: Billiard Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
