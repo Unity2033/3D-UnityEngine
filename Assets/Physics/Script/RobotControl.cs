@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class RobotControl : MonoBehaviour
 {
-    public float speed = 2.5f;
+    public int speed = 2;
     public float radius = 1.5f;
 
     private Vector3 direction;
     private Rigidbody rigidBody;
+    private Collider [ ] colliders;
 
     private void Start()
     {
@@ -22,9 +23,9 @@ public class RobotControl : MonoBehaviour
         direction.z = Input.GetAxisRaw("Vertical");
     }
 
-    private void FixedUpdate()
+    public void Detection()
     {
-        Collider [ ] colliders = Physics.OverlapSphere(transform.position, radius);
+        colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider element in colliders)
         {
@@ -33,6 +34,11 @@ public class RobotControl : MonoBehaviour
                 element.GetComponent<PhysicsControl>().AddForceMessage(rigidBody.transform.forward);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Detection();
 
         rigidBody.rotation = rigidBody.rotation * Quaternion.Euler(0, Input.GetAxis("Mouse X"), 0);
 
