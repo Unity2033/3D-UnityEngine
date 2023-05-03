@@ -3,31 +3,9 @@ using UnityEngine.Video;
 
 public class Mouse : MonoBehaviour
 {
-    bool power = false;
-    private RaycastHit hit;
-
     [SerializeField] Rigidbody rigid;
     [SerializeField] GameObject state;
-    [SerializeField] VideoPlayer video;
-    [SerializeField] LayerMask layerMask;
-
-    private void Update()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-            {
-                power = !power;
-
-                if (power == true)
-                    video.Play();
-                else
-                    video.Stop();
-            }
-        }
-    }
+    [SerializeField] VideoPlayer video; 
 
     private void OnMouseDown()
     {

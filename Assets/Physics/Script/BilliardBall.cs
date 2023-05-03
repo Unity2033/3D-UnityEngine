@@ -1,25 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PhysicsControl : MonoBehaviour
+public class BilliardBall : MonoBehaviour
 {
-    Rigidbody rigidBody;
-    [SerializeField] float speed = 1.0f;
+    private Vector3 direction;
+    [SerializeField] float speed = 5.0f;
+    [SerializeField] Rigidbody rigidBody;
 
-    void Start()
+    private void Update()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        direction.x = Input.GetAxis("Horizontal");
+        direction.z = Input.GetAxis("Vertical");
     }
 
-    public void AddForceMessage(Vector3 direction)
+    private void FixedUpdate()
     {
         rigidBody.AddForce
         (
-            direction * speed,
-            ForceMode.Force
-       );      
+            direction * speed, ForceMode.Acceleration
+        );
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +38,11 @@ public class PhysicsControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Billiard Ball"))
         {
-            rigidBody.mass += 0.025f;
+            rigidBody.AddTorque
+            (
+               Vector3.up * speed,
+               ForceMode.Impulse
+            );
         }
     }
 
@@ -48,11 +50,8 @@ public class PhysicsControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pillar"))
         {
-            rigidBody.AddTorque
-            (
-                Vector3.up * speed,
-                ForceMode.Impulse
-            );
+            int randomMode = Random.Range(0, 3);
+            rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
         }
     }
 }
