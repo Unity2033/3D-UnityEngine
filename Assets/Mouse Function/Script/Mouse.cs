@@ -3,14 +3,19 @@ using UnityEngine.Video;
 
 public class Mouse : MonoBehaviour
 {
-    [SerializeField] Rigidbody rigid;
     [SerializeField] GameObject state;
-    [SerializeField] VideoPlayer video; 
+    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] Texture2D cursorImage;
+
+    private void Start()
+    {
+        Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.ForceSoftware);
+    }
 
     private void OnMouseDown()
     {
         state.SetActive(true);
-        rigid.isKinematic = true;
+        rigidBody.isKinematic = true;
     }
 
     private void OnMouseDrag()
@@ -32,7 +37,7 @@ public class Mouse : MonoBehaviour
     private void OnMouseUp()
     {
         state.SetActive(false);
-        rigid.isKinematic = false;
+        rigidBody.isKinematic = false;
     }
 }
 
