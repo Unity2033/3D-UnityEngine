@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Vector3 direction = Vector3.forward;
+    public Transform destination;
+    private float speed = 2.5f;
 
     void Update()
     {
-        transform.Translate(direction * Time.deltaTime);
+        transform.position = Vector3.MoveTowards
+        (
+            transform.position,
+            destination.position,
+            Time.deltaTime * speed
+        );
+    }
 
-        if (transform.position.x >= 2.5f)
-        {
-            direction = Vector3.forward;
-            transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
-        }
-        else if (transform.position.x <= -2.5f)
-        {
-            direction = Vector3.back;
-            transform.localScale = new Vector3(3.5f, 3.5f, -3.5f);
-        }
+    private void OnBecameInvisible()
+    {
+        transform.position = new Vector3(10, 1, 0);
     }
 
 }
