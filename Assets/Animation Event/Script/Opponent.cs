@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TitanRobot : MonoBehaviour
+public class Opponent : MonoBehaviour
 {
     public Image healthGauge;
     private float health = 100.0f;
@@ -18,6 +18,4 @@ public class TitanRobot : MonoBehaviour
         health -= value;
         healthGauge.fillAmount = health / 100;
     }
-    
-
 }
