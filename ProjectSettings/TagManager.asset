@@ -3,15 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Undefined
-  - Pillar
-  - Billiard Ball
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Billiard Ball
+  - 
   - Water
   - UI
   - 

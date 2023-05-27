@@ -7,18 +7,16 @@ public class Controller : MonoBehaviour
     public Transform [ ] point;
     public NavMeshAgent navMeshAgent;
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        ColliderEffect colliderEffect = other.GetComponent<ColliderEffect>();
+        InvokeRepeating("Move", 1, 2.5f);
+    }
 
-        if(colliderEffect != null)
+    public void Move()
+    {
+        if (navMeshAgent.velocity == Vector3.zero)
         {
-            if (point.Length <= count)
-            {
-                count = 0;
-            }
-
-            navMeshAgent.SetDestination(point[count++].position);
+            navMeshAgent.SetDestination(point[count++ % 3].position);
         }
     }
 }
