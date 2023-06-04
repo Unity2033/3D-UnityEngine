@@ -9,7 +9,8 @@ public class Delete : MonoBehaviour
     void Start()
     {
         random = Random.Range(1, 5);
-        Destroy(gameObject, random);
+
+         Destroy(gameObject, random);
     }
 }
 

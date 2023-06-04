@@ -39,6 +39,11 @@ public class Mouse : MonoBehaviour
         state.SetActive(false);
         rigidBody.isKinematic = false;
     }
+
+    private void OnMouseEnter()
+    {
+        Debug.Log("OnMouseEnter"); //마우스가 오브젝트에 첫 진입했을때
+    }
 }
 
 
