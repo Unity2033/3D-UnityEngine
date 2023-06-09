@@ -13,11 +13,13 @@ public class Character : MonoBehaviour
 
     public void Skill(string name)
     {
-        if(Random.Range(0, 2) == 0)
+        int rand = Random.Range(0, 2);
+
+        if (rand == 0)
         {
-            gameObject.GetComponent<Animator>().CrossFade(name, 0.25f);
-        }
-   
+            gameObject.GetComponent<Animator>().Play(name);
+        }  
     }
+
 }
 
