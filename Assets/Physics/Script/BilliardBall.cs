@@ -22,7 +22,7 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Pillar"))
+        if (collision.gameObject.layer == 6)
         {
             var result = Vector3.Reflect
             (
@@ -36,22 +36,21 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Billiard Ball"))
-        {
-            rigidBody.AddTorque
-            (
-               Vector3.up * speed,
-               ForceMode.Impulse
-            );
-        }
+        //if (collision.gameObject.CompareTag("Billiard Ball"))
+        //{
+        //    rigidBody.AddTorque
+        //    (
+        //       Vector3.up * speed,
+        //       ForceMode.Impulse
+        //    );
+        //}
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Pillar"))
-        {
-            int randomMode = Random.Range(0, 3);
-            rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
-        }
+   
+        // int randomMode = Random.Range(0, 3);
+        // rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
+        
     }
 }

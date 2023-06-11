@@ -5,6 +5,12 @@ public class PhysicsManager : MonoBehaviour
 {
     private Ray ray;
     private RaycastHit rayCastHit;
+    int [] layerMask = new int[3];
+
+    private void Start()
+    {
+        layerMask[0] = 1 << LayerMask.NameToLayer("Billiard Ball (Two)");
+    }
 
     private void Update()
     {
@@ -12,12 +18,12 @@ public class PhysicsManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (Physics.Raycast(ray, out rayCastHit, Mathf.Infinity))
+            for (int i = 0; i < layerMask.Length; i++)
             {
-                if(rayCastHit.collider.CompareTag("Billiard Ball"))
+                if (Physics.Raycast(ray, out rayCastHit, Mathf.Infinity, layerMask[i]))
                 {
-                    rayCastHit.collider.GetComponent<Rigidbody>().Sleep();           
-                }                     
+                    rayCastHit.collider.GetComponent<Rigidbody>().Sleep();
+                }
             }
         }
     }

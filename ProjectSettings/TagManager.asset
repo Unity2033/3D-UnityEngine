@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Point
   - Fox
+  - Billiard Ball
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Billiard Ball (Two)
   - 
   - 
   - 
