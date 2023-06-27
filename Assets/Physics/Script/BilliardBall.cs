@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BilliardBall : MonoBehaviour
 {
-    private Vector3 direction;
+    [SerializeField] Vector3 direction;
     [SerializeField] float speed = 5.0f;
     [SerializeField] Rigidbody rigidBody;
 
@@ -16,7 +16,8 @@ public class BilliardBall : MonoBehaviour
     {
         rigidBody.AddForce
         (
-            direction * speed, ForceMode.Acceleration
+            direction * speed, 
+            ForceMode.Acceleration
         );
     }
 
@@ -36,21 +37,22 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        //if (collision.gameObject.CompareTag("Billiard Ball"))
-        //{
-        //    rigidBody.AddTorque
-        //    (
-        //       Vector3.up * speed,
-        //       ForceMode.Impulse
-        //    );
-        //}
+        if (collision.gameObject.layer == 7)
+        {
+            rigidBody.AddTorque
+            (
+               Vector3.up * speed,
+               ForceMode.Impulse
+            );
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-   
-        // int randomMode = Random.Range(0, 3);
-        // rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
-        
+        if (collision.gameObject.layer == 8)
+        {
+             int randomMode = Random.Range(0, 3);
+             rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
+        }
     }
 }
