@@ -5,21 +5,16 @@ public class Mouse : MonoBehaviour
     [SerializeField] GameObject state;
     [SerializeField] Texture2D cursorImage;
 
-
-    private void Update()
+    private void SetMouse(string name)
     {
+        cursorImage = Resources.Load<Texture2D>(name);
         Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.ForceSoftware);
-    }
-
-
-    private void OnMouseDown()
-    {
-        // state.SetActive(true);
-        
     }
 
     private void OnMouseDrag()
     {
+        SetMouse("Basic Select Icon");
+
         // 마우스의 위치를 설정합니다.
         Vector3 mousePosition = new Vector3
         (
@@ -32,23 +27,21 @@ public class Mouse : MonoBehaviour
         Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         transform.position = objectPosition;
-
-        state.SetActive(false);
     }
 
     private void OnMouseUp()
-    {
-        state.SetActive(true);
+    {       
+        SetMouse("Basic Icon");
     }
 
     private void OnMouseExit()
     {
-        cursorImage = Resources.Load<Texture2D>("Basic Icon");
+        state.SetActive(false);
     }
 
     private void OnMouseEnter()
     {
-        cursorImage = Resources.Load<Texture2D>("Basic Select Icon");
+        state.SetActive(true);
     }
 }
 
