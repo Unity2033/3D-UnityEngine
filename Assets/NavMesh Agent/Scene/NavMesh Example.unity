@@ -353,11 +353,11 @@ NavMeshObstacle:
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 1
+  m_MoveThreshold: 0.75
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.5, z: 0}
-  m_TimeToStationary: 0.35
+  m_TimeToStationary: 0.5
 --- !u!195 &962543676
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -911,7 +911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 8.65
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
       propertyPath: m_LocalRotation.w
