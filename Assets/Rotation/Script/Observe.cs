@@ -9,6 +9,7 @@ public class Observe : MonoBehaviour
     public void EarthObservation()
     {
         StartCoroutine(LookCoroutine());
+    
     }
 
     public IEnumerator LookCoroutine()
