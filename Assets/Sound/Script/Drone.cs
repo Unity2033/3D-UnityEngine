@@ -5,9 +5,12 @@ using UnityEngine;
 public class Drone : MonoBehaviour
 {
     public float speed = 55;
+    public Vector3 direction;
 
     private void Start()
     {
+        direction = transform.position;
+
         InvokeRepeating("NewPosition", 5, 5);
     }
 
@@ -18,11 +21,7 @@ public class Drone : MonoBehaviour
 
     public void NewPosition()
     {
-        transform.position = new Vector3
-        (
-             Random.insideUnitCircle.x * 5,
-             Random.insideUnitCircle.y * 5,
-             250
-        );
+        transform.position = direction;
+        transform.Find("Canvas").gameObject.SetActive(false);
     }
 }
