@@ -9,11 +9,11 @@ public class AudioManager : MonoBehaviour
 
     public void Search()
     {
-        Drone drone = GameObject.Find("Drone").GetComponent<Drone>();
+        GameObject objectSearched = GameObject.Find("Drone");
 
-        drone.transform.Find("Canvas").gameObject.SetActive(true);
+        objectSearched.transform.GetChild(0).gameObject.SetActive(true);
 
-        AudioSource.PlayClipAtPoint(audioClip[0], drone.transform.position);
+        AudioSource.PlayClipAtPoint(audioClip[0], objectSearched.transform.position);
     }
 
     public void Signal()
