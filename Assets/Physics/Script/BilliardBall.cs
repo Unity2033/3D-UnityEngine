@@ -51,8 +51,7 @@ public class BilliardBall : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-             int randomMode = Random.Range(0, 3);
-             rigidBody.interpolation = (RigidbodyInterpolation)randomMode;
+            collision.collider.GetComponent<Rigidbody>().Sleep();
         }
     }
 }

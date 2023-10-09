@@ -17,7 +17,7 @@ public class PhysicsManager : MonoBehaviour
             {              
                 if (Physics.Raycast(ray, out rayCastHit, Mathf.Infinity, layerMask[i]))
                 {
-                    rayCastHit.collider.GetComponent<Rigidbody>().Sleep();
+                    Camera.main.cullingMask = ~(1 << rayCastHit.transform.gameObject.layer); 
                 }
             }
         }
