@@ -1,43 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Create : MonoBehaviour
 {
-    public Button button;
     public GameObject prefab;
 
-    private bool active = true;
-    private float currentTime = 5f;
+    private CancellationTokenSource tokenSource = new CancellationTokenSource();
 
-    public void CreateGeneric()
+    void Start()
     {
-        active = false;
-
-        Instantiate 
-        (
-            prefab, 
-            new Vector3(0, -1.25f, 0), 
-            prefab.transform.rotation
-        ).AddComponent<Delete>();
+        CreateObject();
     }
 
-    private void Update()
+    private async void CreateObject()
     {
-        if (active == false)
+        while (true)
         {
-            button.interactable = false;
-            currentTime -= Time.deltaTime;
-            button.image.fillAmount = currentTime / 5f;
-
-            if (currentTime <= 0)
+            try
             {
-                active = true;
-                button.interactable = true;
-                button.image.fillAmount = currentTime = 5f;
+                await Task.Delay(5000, tokenSource.Token);
             }
+            catch
+            {
+                break;
+            }
+            
+            Instantiate
+            (
+                prefab,
+                new Vector3(0, -1.25f, 0),
+                prefab.transform.rotation
+            ).AddComponent<Delete>();
         }
+    }
+
+    private void OnDestroy()
+    {
+          tokenSource.Cancel();
     }
 }
 

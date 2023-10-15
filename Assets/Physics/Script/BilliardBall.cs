@@ -23,7 +23,7 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 7)
         {
             var result = Vector3.Reflect
             (
@@ -37,7 +37,7 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 8)
         {
             rigidBody.AddTorque
             (
@@ -49,7 +49,7 @@ public class BilliardBall : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 9)
         {
             collision.collider.GetComponent<Rigidbody>().Sleep();
         }

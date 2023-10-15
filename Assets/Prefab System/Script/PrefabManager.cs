@@ -31,4 +31,19 @@ public class PrefabManager : MonoBehaviour
             InteractionMode.AutomatedAction
         );
     }
+
+    private void OnGUI()
+    {
+        if (GUI.Button(new Rect(20, 25, 200, 30), "Prefab Release Button"))
+        {
+            Debug.Log("Prefab Release Button");
+            // UnpackPrefab();
+        }
+
+        if (GUI.Button(new Rect(20, 80, 200, 30), "Prefab Set Up Button"))
+        {
+            Debug.Log("Prefab Set Up Button");
+            // SavePrefab();
+        }
+    }
 }
