@@ -1,49 +1,40 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Create : MonoBehaviour
 {
+    public bool createFlag;
     public GameObject prefab;
-
-    private CancellationTokenSource tokenSource = new CancellationTokenSource();
+    private Thread subThread;
 
     void Start()
     {
-        CreateObject();
+        subThread = new Thread(CreateRoutine);
+
+        subThread.Start();
     }
 
-    private async void CreateObject()
+    private void Update()
     {
-        while (true)
+        if (createFlag == true)
         {
-            try
-            {
-                await Task.Delay(5000, tokenSource.Token);
-            }
-            catch
-            {
-                break;
-            }
-            
             Instantiate
             (
-                prefab,
-                new Vector3(0, -1.25f, 0),
-                prefab.transform.rotation
+                prefab, Vector3.down, prefab.transform.rotation
             ).AddComponent<Delete>();
+
+            createFlag = false;
         }
     }
 
-    private void OnDestroy()
+    private void CreateRoutine()
     {
-          tokenSource.Cancel();
+        while (true)
+        {
+            Thread.Sleep(5000);
+
+            createFlag = true;
+        }
     }
 }
 
