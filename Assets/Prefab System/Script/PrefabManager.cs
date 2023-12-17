@@ -15,11 +15,13 @@ public class PrefabManager : MonoBehaviour
 
     public void SavePrefab()
     {
-        PrefabUtility.SaveAsPrefabAssetAndConnect
-        (
-            temporaryPrefab, "Assets/Prefab System/Prefab/" + prefab.name + ".prefab",
-            InteractionMode.AutomatedAction
-        );
+        PrefabUtility.SavePrefabAsset(prefab);
+
+       // PrefabUtility.SaveAsPrefabAssetAndConnect
+       // (
+       //     temporaryPrefab, "Assets/Prefab System/Prefab/" + prefab.name + ".prefab",
+       //     InteractionMode.AutomatedAction
+       // );
     }
 
     public void UnpackPrefab()
@@ -36,14 +38,12 @@ public class PrefabManager : MonoBehaviour
     {
         if (GUI.Button(new Rect(20, 25, 200, 30), "Prefab Release Button"))
         {
-            Debug.Log("Prefab Release Button");
-            // UnpackPrefab();
+            UnpackPrefab();
         }
 
-        if (GUI.Button(new Rect(20, 80, 200, 30), "Prefab Set Up Button"))
+        if (GUI.Button(new Rect(20, 80, 200, 30), "Prefab Save Button"))
         {
-            Debug.Log("Prefab Set Up Button");
-            // SavePrefab();
+            SavePrefab();
         }
     }
 }

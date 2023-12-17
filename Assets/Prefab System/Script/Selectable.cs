@@ -14,7 +14,6 @@ public class Selectable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        // 마우스의 위치를 설정합니다.
         Vector3 mousePosition = new Vector3
         (
              Input.mousePosition.x, 
@@ -22,7 +21,6 @@ public class Selectable : MonoBehaviour
              Camera.main.WorldToScreenPoint(gameObject.transform.position).z
         );
 
-        //마우스 좌표를 ScreenToWorldPoint로 변경하여 오브젝트의 위치로 변경합니다.     
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioClip [ ] audioClip;
-    [SerializeField] AudioSource audioSource;
+    public AudioClip [] sound;
 
-    public void Search()
+    private void OnGUI()
     {
-        GameObject objectSearched = GameObject.Find("Drone");
+        if (GUI.Button(new Rect(20, 25, 200, 30), "Search Button"))
+        {
+            Transform observer = GameObject.Find("Drone").transform;
 
-        objectSearched.transform.GetChild(0).gameObject.SetActive(true);
+            AudioSource.PlayClipAtPoint(sound[0], observer.position);
+        }
 
-        AudioSource.PlayClipAtPoint(audioClip[0], objectSearched.transform.position);
-    }
-
-    public void Signal()
-    {
-        audioSource.PlayOneShot(audioClip[1]);
+        if (GUI.Button(new Rect(20, 80, 200, 30), "Connect Button"))
+        {
+            GetComponent<AudioSource>().PlayOneShot(sound[1]);
+        }
     }
 }
