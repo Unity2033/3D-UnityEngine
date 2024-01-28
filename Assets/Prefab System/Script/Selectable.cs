@@ -4,13 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))] 
 public class Selectable : MonoBehaviour
 {
-    [SerializeField] Texture2D cursorImage;
-
-    private void SetMouse(string name)
-    {
-        cursorImage = Resources.Load<Texture2D>(name);
-        Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.ForceSoftware);
-    }
+    [SerializeField] Texture2D mouse;
 
     private void OnMouseDrag()
     {
@@ -24,19 +18,16 @@ public class Selectable : MonoBehaviour
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    private void Awake()
-    {
-        SetMouse("Basic Icon");
-    }
-
     private void OnMouseEnter()
     {       
-        SetMouse("Select Icon");
+        mouse = Resources.Load<Texture2D>("Enter Cursor");
+        Cursor.SetCursor(mouse, Vector2.zero, CursorMode.Auto);
     }
 
     private void OnMouseExit()
     {
-        SetMouse("Basic Icon");
+        mouse = Resources.Load<Texture2D>("Basic Cursor");
+        Cursor.SetCursor(mouse, Vector2.zero, CursorMode.Auto);
     }
 }
 

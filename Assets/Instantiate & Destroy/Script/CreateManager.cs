@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class CreateManager : MonoBehaviour
 {
-    public static int count;
     public GameObject monster;
     public Vector3 [ ] vector3;
-
-    public Unit CreateUnit()
-    {
-        Unit unit = Instantiate(monster).AddComponent<Unit>();
-
-        unit.transform.position = vector3[count++ % vector3.Length];
-
-        return unit;
-    }
 
     public IEnumerator Start()
     {
         while (true)
         {
-            Unit unit = CreateUnit();
+            Unit unit = Instantiate(monster).AddComponent<Unit>();
+
+            unit.transform.position = vector3[Random.Range(0, vector3.Length)];
 
             yield return new WaitForSeconds(2.5f);
 

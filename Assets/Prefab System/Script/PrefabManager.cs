@@ -13,17 +13,6 @@ public class PrefabManager : MonoBehaviour
         temporaryPrefab = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
     }
 
-    public void SavePrefab()
-    {
-        PrefabUtility.SavePrefabAsset(prefab);
-
-       // PrefabUtility.SaveAsPrefabAssetAndConnect
-       // (
-       //     temporaryPrefab, "Assets/Prefab System/Prefab/" + prefab.name + ".prefab",
-       //     InteractionMode.AutomatedAction
-       // );
-    }
-
     public void UnpackPrefab()
     {
         PrefabUtility.UnpackPrefabInstance
@@ -39,11 +28,6 @@ public class PrefabManager : MonoBehaviour
         if (GUI.Button(new Rect(20, 25, 200, 30), "Prefab Release Button"))
         {
             UnpackPrefab();
-        }
-
-        if (GUI.Button(new Rect(20, 80, 200, 30), "Prefab Save Button"))
-        {
-            SavePrefab();
         }
     }
 }
